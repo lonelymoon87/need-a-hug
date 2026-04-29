@@ -22,7 +22,19 @@ preferred_name:
 - 
 ```
 
-Recommended prompt:
+Recommended prompt. Use the matching-language version only. Do not output language labels.
+
+For English:
+
+```text
+Sure.
+
+What should I call you?
+
+It is okay if you would rather not say. We can keep going.
+```
+
+For Chinese:
 
 ```text
 可以。

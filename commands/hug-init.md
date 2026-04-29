@@ -1,6 +1,18 @@
 Use the optional initialization flow for `need-a-hug`.
 
-Ask only:
+Use the matching-language version only. Do not output language labels.
+
+For English:
+
+```text
+Sure.
+
+What should I call you?
+
+You can skip this. We can just continue.
+```
+
+For Chinese:
 
 ```text
 可以。
