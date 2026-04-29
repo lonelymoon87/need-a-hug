@@ -4,21 +4,25 @@
 >
 > 抱抱一下吧，我只关心你累不累。
 
-`need-a-hug` 是一个轻量 AgentSkill。它不会实现某个具体功能，而是在用户焦虑、崩溃、自责、孤独、burnout、被 bug 或 AI 搞到很难受的时候，让 Agent 暂时从“解决问题”切换成“先安慰人”。
+`need-a-hug` 是一个给 AI Agent 用的小技能。它不负责写代码、查资料或修 bug；它只做一件事：当用户焦虑、崩溃、自责、孤独、长期疲惫，或者被 bug 和 AI 搞到很难受的时候，让 Agent 先别急着解决问题，先安慰人。
 
-它不是 AI 心理咨询师，也不是医疗或治疗产品。它更像一个很小的情绪急救层：有时候，人不是需要更多计划，而是需要先被好好抱一下。
+它不是心理咨询师，也不是医疗产品。它只是让 Agent 在合适的时候先慢一点，别急着甩方案，先看见人。
+
+有时候，人不是需要更多计划。
+
+人只是太累了，想被好好接住一下。
 
 ## 一句话
 
-让你的 Agent 学会在用户撑不住的时候，先说人话，先安慰，再解决问题。
+让 Agent 在用户撑不住的时候，先说人话，先陪一下，再回到问题本身。
 
 ## 为什么需要
 
 很多 Agent 在用户最难受的时候，还是继续输出：
 
 - 下一步计划
-- checklist
-- debugging 建议
+- 检查清单
+- 调试建议
 - “你可以试试...”
 - “我们来分析一下...”
 
@@ -35,20 +39,19 @@
 
 ## 定位
 
-`need-a-hug` 适合那些“再来一个 checklist 也没用”的时刻。
+`need-a-hug` 适合那些“再给一个方案也没用”的时刻。
 
-它让 Agent 先看见用户的累、自责、焦虑和失落，先把人稳住，再慢慢回到事情本身。
+它让 Agent 先听见用户的累、自责、焦虑和失落。等人缓一点，再一起看事情怎么往下走。
 
 ## 它会做什么
 
-- 识别显式触发：`/hug`、`/need-a-hug`、`抱抱我`、`安慰我一下`
-- 识别隐式情绪信号：自责、羞耻、焦虑、崩溃、孤独、错失机会、burnout
-- 识别程序员场景：bug、AI 反复出错、项目失败、竞品已经做出来、觉得自己太菜
-- 默认先安慰，不让用户马上选择“你要安慰还是建议”
-- 用心理咨询里的倾听、共情、去羞耻、温和重构作为内部脚手架
-- 表面上保持自然说话，不说“我在使用 CBT/OARS 分析你”
-- 避免毒鸡汤、诊断、治疗承诺、情感依赖
-- 遇到自伤、自杀、危险、虐待、医疗紧急情况时，优先安全引导
+- 用户明确说 `/hug`、`抱抱我`、`安慰我一下` 时，直接进入安慰状态。
+- 用户没有明说，但已经在自责、崩溃、很孤独、很后悔、很累的时候，也能尽量感知到。
+- 对程序员常见的难受更敏感：bug 卡太久、AI 一直出错、项目做不下去、看到别人已经做出来、觉得自己太菜。
+- 默认先安慰，不一上来问“你要安慰还是建议？”。
+- 回应会借鉴一些心理咨询里的倾听和共情方式，但不会在用户面前讲术语。
+- 不诊断，不承诺治疗，不灌鸡汤，也不把用户绑在情绪依赖里。
+- 如果用户提到自伤、自杀、正在发生的危险、虐待或医疗紧急情况，会优先把安全放在第一位。
 
 ## 示例
 
@@ -64,11 +67,11 @@ Agent：
 ```text
 这一下确实很刺痛。
 
-你做了很久，结果发现别人已经走在前面了，很容易一下子开始怪自己：为什么不快一点，为什么又拖了。这个念头会很重。
+你做了很久，结果发现别人已经走在前面了，很容易一下子开始怪自己：为什么不快一点，为什么又拖了。这个念头会很重，也很伤人。
 
-但先别急着把它总结成“我总是错过机会”。这件事可能有教训，也可能真的有遗憾，可它不能直接判你这个人不行。
+但先别急着把它总结成“我总是错过机会”。这件事可能有教训，也可能真的有遗憾，可它不能直接证明你这个人不行。
 
-我们可以先不复盘。先让这一下难受过去一点。等你缓一点，如果你愿意，再看你这段时间做出来的理解，哪些还能留下来。
+我们先不复盘。先让这一下难受过去一点。等你缓一点，如果你愿意，再看你这段时间攒下来的理解，哪些还能留下来。
 ```
 
 ## 安装
@@ -77,27 +80,27 @@ Agent：
 
 | 平台 | 自动触发 | 手动触发 | 安装方式 |
 | --- | --- | --- | --- |
-| Claude Code | 支持 | `/hug`, `$need-a-hug` | Plugin 或 skill 目录 |
-| OpenAI Codex CLI | 支持 | `$need-a-hug`, `/prompts:hug` | Skill 目录 + 可选 prompts |
+| Claude Code | 支持 | `/hug`, `$need-a-hug` | 插件或技能目录 |
+| OpenAI Codex CLI | 支持 | `$need-a-hug`, `/prompts:hug` | 技能目录 + 可选快捷命令 |
 | Cursor | 支持 | 正常对话触发 | `.cursor/rules/*.mdc` |
-| Kiro | 支持 | 正常对话触发 | `.kiro/steering/*.md` 或 skill 目录 |
-| CodeBuddy | 支持 | 正常对话触发 | Skill 目录 |
-| OpenClaw | 支持 | 正常对话触发 | ClawHub 或 skill 目录 |
-| Google Antigravity | 支持 | 正常对话触发 | Skill 目录 |
-| OpenCode | 支持 | 正常对话触发 | Skill 目录 |
-| VSCode Copilot | 支持 | `/need-a-hug` prompt | Copilot instructions + prompt |
+| Kiro | 支持 | 正常对话触发 | `.kiro/steering/*.md` 或技能目录 |
+| CodeBuddy | 支持 | 正常对话触发 | 技能目录 |
+| OpenClaw | 支持 | 正常对话触发 | ClawHub 或技能目录 |
+| Google Antigravity | 支持 | 正常对话触发 | 技能目录 |
+| OpenCode | 支持 | 正常对话触发 | 技能目录 |
+| VSCode Copilot | 支持 | `/need-a-hug` prompt | Copilot instructions 和 prompt |
 
-核心真源是：
+真正的核心只有这一份：
 
 ```text
 skills/need-a-hug/
 ```
 
-其他平台文件只是很薄的适配层。
+其他平台里的文件只是为了让不同工具更容易识别它。
 
 ### Claude Code
 
-发布到 marketplace 后：
+发布到插件市场后：
 
 ```bash
 claude plugin marketplace add <owner>/need-a-hug
@@ -110,20 +113,20 @@ claude plugin install need-a-hug@need-a-hug-skills
 git clone https://github.com/<owner>/need-a-hug ~/.claude/plugins/need-a-hug
 ```
 
-手动 skill 安装：
+手动安装：
 
 ```bash
 mkdir -p ~/.claude/skills/need-a-hug
 cp -R skills/need-a-hug/. ~/.claude/skills/need-a-hug/
 ```
 
-可选 Claude Code hooks 在：
+可选 Claude Code hooks（钩子）在：
 
 ```text
 hooks/hooks.json
 ```
 
-这些 hook 只做三件事：识别明显情绪触发、从 `~/.need-a-hug/memory.md` 安静恢复一点记忆、在 compact 前保留短上下文。它们不联网。
+这些钩子只做三件事：识别明显的情绪触发、读取你自己保存的简短记忆、在上下文被压缩前留下一点最近状态。它们不联网。
 
 ### OpenAI Codex CLI
 
@@ -142,7 +145,7 @@ curl -L -o ~/.codex/skills/need-a-hug/references/memory-template.md \
   https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/references/memory-template.md
 ```
 
-可选 prompt 命令：
+也可以安装几个快捷命令：
 
 ```bash
 mkdir -p ~/.codex/prompts
@@ -167,7 +170,7 @@ cp -R skills/need-a-hug/. .codex/skills/need-a-hug/
 
 ### Cursor
 
-项目级 rule：
+项目里加一条规则：
 
 ```bash
 mkdir -p .cursor/rules
@@ -177,7 +180,7 @@ curl -L -o .cursor/rules/need-a-hug.mdc \
 
 ### Kiro
 
-Steering 文件：
+加一个 steering 配置：
 
 ```bash
 mkdir -p .kiro/steering
@@ -185,7 +188,7 @@ curl -L -o .kiro/steering/need-a-hug.md \
   https://raw.githubusercontent.com/<owner>/need-a-hug/main/kiro/steering/need-a-hug.md
 ```
 
-AgentSkill 格式：
+或者直接复制技能目录：
 
 ```bash
 mkdir -p .kiro/skills/need-a-hug
@@ -215,7 +218,7 @@ curl -L -o ~/.openclaw/skills/need-a-hug/SKILL.md \
   https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/SKILL.md
 ```
 
-如果要带完整语料和参考文件，复制整个目录：
+如果要带上完整语料和参考文件，复制整个目录：
 
 ```bash
 cp -R skills/need-a-hug/. ~/.openclaw/skills/need-a-hug/
@@ -251,7 +254,7 @@ cp -R skills/need-a-hug/. .opencode/skills/need-a-hug/
 
 ### VSCode Copilot
 
-项目 instruction 文件：
+项目里加一个 Copilot instructions 文件：
 
 ```bash
 mkdir -p .github/instructions
@@ -259,7 +262,7 @@ curl -L -o .github/instructions/need-a-hug.instructions.md \
   https://raw.githubusercontent.com/<owner>/need-a-hug/main/vscode/instructions/need-a-hug.instructions.md
 ```
 
-手动 prompt：
+再加一个手动 prompt：
 
 ```bash
 mkdir -p .github/prompts
@@ -267,7 +270,7 @@ curl -L -o .github/prompts/need-a-hug.prompt.md \
   https://raw.githubusercontent.com/<owner>/need-a-hug/main/vscode/prompts/need-a-hug.prompt.md
 ```
 
-### 其他支持 AgentSkills 的工具
+### 其他支持 AgentSkill 的工具
 
 把整个目录复制过去即可：
 
@@ -303,7 +306,7 @@ need a hug
 不想说也没关系，我们直接继续。
 ```
 
-语气和偏好不做问卷。Agent 应该从后续对话里慢慢感知，而不是一开始就让用户填表。
+不会一开始就让你填一堆偏好。称呼之外的东西，Agent 应该从后面的对话里慢慢感知。
 
 退出：
 
@@ -317,21 +320,21 @@ need a hug
 
 ## 设计原则
 
-首轮可以像拥抱：
+第一句可以像一个拥抱：
 
 ```text
 🫂 先抱抱你。
 ```
 
-但后续不能每轮都重复这句话。后续要像一个人真的在听你说话。
+但不要每一轮都重复这句话。后面应该像一个人真的在听你说话。
 
-默认先安慰，不要一上来问：
+默认先安慰，不要一上来把选择丢给用户：
 
 ```text
 你想要安慰还是建议？
 ```
 
-这会给用户增加选择压力。更好的方式是：
+用户已经很累了，这种问题也会变成压力。更好的方式是：
 
 ```text
 我们先不急着做决定。等你缓一点，如果你愿意，我们再一起看下一步。
@@ -339,15 +342,15 @@ need a hug
 
 ## 安全边界
 
-这个 Skill 不是治疗、诊断、医疗建议或紧急服务。
+这个工具不是治疗、诊断、医疗建议，也不是紧急服务。
 
-如果用户提到自伤、自杀、即时危险、虐待、医疗紧急情况，Agent 应优先建议联系当地紧急服务、身边可信任的人，或使用与用户明确提供的国家/地区匹配的危机帮助资源。如果不知道用户所在地，不应该直接写死某个国家的热线。
+如果用户提到自伤、自杀、正在发生的危险、虐待或医疗紧急情况，Agent 应该优先建议联系现实中的帮助：当地紧急服务、身边可信任的人，或者用户明确提供所在地之后，再给当地合适的求助资源。
 
-普通的疲惫、burnout、后悔、难过或失眠，不应该突然提危机热线，除非用户明确表达自伤或即时危险。
+普通的疲惫、后悔、难过、失眠，不应该突然搬出危机热线。除非用户明确说到自伤、自杀或正在发生的危险。
 
 ## 为什么可以放心检查
 
-核心 `need-a-hug` skill 是纯文本：
+核心 `need-a-hug` 是纯文本：
 
 - 没有脚本
 - 不执行命令
@@ -355,7 +358,7 @@ need a hug
 - 不收集数据
 - 不读隐私文件
 
-Claude Code plugin 形式额外带了可选 hook。它们是很小的 shell 脚本，只输出 prompt 上下文，并且只在 `~/.need-a-hug/memory.md` 或 `~/.need-a-hug/session.md` 存在时读取这两个文件。它们不联网，也不做统计。
+Claude Code 插件额外带了几个可选钩子。它们是很小的 shell 脚本，只给 Agent 补一点提示上下文；只有在 `~/.need-a-hug/memory.md` 或 `~/.need-a-hug/session.md` 已经存在时，才会读取这两个文件。它们不联网，也不做统计。
 
 你可以直接读完整内容：
 
