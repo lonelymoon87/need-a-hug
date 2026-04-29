@@ -1,0 +1,33 @@
+{
+  "name": "need-a-hug",
+  "version": "0.2.0",
+  "description": "Sometimes you just need a hug. A lightweight, text-only emotional first-aid AgentSkill that helps agents comfort overwhelmed developers before giving them another plan.",
+  "author": {
+    "name": "need-a-hug"
+  },
+  "homepage": "https://github.com/need-a-hug/need-a-hug",
+  "repository": "https://github.com/need-a-hug/need-a-hug",
+  "license": "MIT",
+  "keywords": [
+    "agent-skill",
+    "emotional-support",
+    "comfort",
+    "mental-wellbeing",
+    "developer-wellbeing",
+    "burnout",
+    "encouragement",
+    "hug-mode",
+    "ai-agent",
+    "codex",
+    "claude-code",
+    "cursor",
+    "kiro",
+    "codebuddy",
+    "openclaw",
+    "antigravity",
+    "opencode",
+    "github-copilot",
+    "clawhub",
+    "agent-skills"
+  ]
+}

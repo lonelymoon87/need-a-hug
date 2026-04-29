@@ -1,0 +1,40 @@
+{
+  "description": "need-a-hug optional Claude Code hooks: distress trigger, gentle memory restore, and pre-compact comfort continuity",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "need a hug|hug me|comfort me|encourage me|I'm overwhelmed|I'm spiraling|I can't do this|I feel stupid|I feel useless|I'm burned out|I want to cry|抱抱|安慰我|鼓励我|陪我一下|我撑不住了|我崩溃了|我想哭|我好累|我不行了|我太废物了|我是不是太菜了|这个 bug 把我搞崩了|AI 一直错",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/distress-trigger.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/session-memory.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "[need-a-hug PreCompact]\n\nIf need-a-hug comfort mode is active, or if the user has recently shared emotional context that would feel bad to lose, write a short checkpoint to ~/.need-a-hug/session.md before compaction.\n\nStore only plain, non-clinical context that helps continuity, for example:\n\n```markdown\n# need-a-hug recent context\n\n- The user felt hurt after discovering a similar project already exists.\n- They tend to turn project delays into self-blame.\n- They prefer comfort first, then a very small next step.\n```\n\nDo not store crisis details, medical history, diagnoses, trauma details, third-party private information, or speculative labels. If need-a-hug has not been active, do nothing."
+          }
+        ]
+      }
+    ]
+  }
+}

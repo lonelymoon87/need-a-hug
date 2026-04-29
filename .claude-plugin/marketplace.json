@@ -1,0 +1,19 @@
+{
+  "name": "need-a-hug-skills",
+  "description": "Sometimes you just need a hug. A lightweight comfort skill for agents that helps users feel seen before returning to the task.",
+  "owner": {
+    "name": "need-a-hug",
+    "url": "https://github.com/need-a-hug"
+  },
+  "plugins": [
+    {
+      "name": "need-a-hug",
+      "description": "Lightweight emotional first aid for agents. Includes the core AgentSkill plus optional Claude Code hooks for distress-triggered comfort and short comfort memory continuity.",
+      "version": "0.2.0",
+      "source": "./",
+      "author": {
+        "name": "need-a-hug"
+      }
+    }
+  ]
+}

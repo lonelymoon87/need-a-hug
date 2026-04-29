@@ -1,0 +1,10 @@
+# Local/private working notes
+/market-research.md
+/evals/
+/docs/DISTRIBUTION.md
+/docs/LAUNCH_COPY.md
+/_private/
+/.local/
+
+# OS/editor noise
+.DS_Store
