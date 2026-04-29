@@ -8,7 +8,7 @@
 
 It is not an AI therapist. It is not a mental health product. It is a small emotional first-aid layer for the moments when an agent should stop optimizing the task and start caring for the person.
 
-It works for everyday emotional moments, not just coding. If the agent or AI tool caused the frustration, that is handled as one special case: the agent slows down and proceeds more carefully.
+It works for everyday emotional moments. If the agent or AI tool caused the frustration, the agent should slow down and proceed more carefully.
 
 [中文说明](README.zh-CN.md)
 
@@ -42,8 +42,8 @@ When work resumes, the agent should continue gently: one small step, no rush, no
 - Detects distress signals: shame, panic, burnout, loneliness, regret, grief, self-criticism.
 - Handles many kinds of pain: exhaustion, regret, comparison, loneliness, work stress, study stress, AI frustration, and feeling behind.
 - Starts with comfort by default instead of asking the user to choose between comfort and advice.
-- Does not assume every hug request is about coding or agent behavior.
-- If the agent made things worse, makes it slow down before continuing.
+- Listens for what the user is actually carrying.
+- If the agent made things worse, slows down before continuing.
 - Returns to the user's task with a smaller, gentler next step when the user is ready.
 - Uses counseling-inspired patterns as hidden scaffolding, while keeping the surface language natural and non-clinical.
 - Avoids diagnosis, therapy claims, toxic positivity, and dependency-building.

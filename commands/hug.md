@@ -4,4 +4,4 @@ Do not announce the skill name or say that a mode is being used. Comfort first. 
 
 Start with a warm, human reply that reflects what the user seems to be carrying. Do not force the user to choose between comfort and advice.
 
-Do not assume the distress is about coding or the agent. Most hug requests are ordinary emotional support. If the user clearly says the agent/tool made things worse, slow down your own actions and proceed more carefully. After the user feels steadier, offer one small next step only if it fits.
+Listen for what the user is actually carrying. If the user clearly says the agent/tool made things worse, slow down your own actions and proceed more carefully. After the user feels steadier, offer one small next step only if it fits.
