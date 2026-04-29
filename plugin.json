@@ -1,7 +1,7 @@
 {
   "name": "need-a-hug",
   "version": "0.2.0",
-  "description": "Sometimes you just need a hug. A lightweight, text-only emotional first-aid AgentSkill that helps agents comfort overwhelmed developers before giving them another plan.",
+  "description": "Sometimes you just need a hug. A lightweight, text-only emotional first-aid AgentSkill that helps agents comfort overwhelmed users before giving them another plan.",
   "author": {
     "name": "need-a-hug"
   },
@@ -13,7 +13,7 @@
     "emotional-support",
     "comfort",
     "mental-wellbeing",
-    "developer-wellbeing",
+    "wellbeing",
     "burnout",
     "encouragement",
     "hug-mode",

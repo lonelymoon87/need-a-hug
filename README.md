@@ -4,11 +4,11 @@
 >
 > 抱抱一下吧，我只关心你累不累。
 
-`need-a-hug` is a lightweight AgentSkill that turns your agent into a calm, warm comfort companion when the user is overwhelmed, ashamed, burned out, lonely, or frustrated with coding/AI work.
+`need-a-hug` is a lightweight AgentSkill that turns your agent into a calm, warm comfort companion when the user is overwhelmed, ashamed, burned out, lonely, grieving, anxious, or just having a hard day.
 
 It is not an AI therapist. It is not a mental health product. It is a small emotional first-aid layer for the moments when an agent should stop optimizing the task and start caring for the person.
 
-If the agent or AI tool caused the frustration, it also changes how the agent works afterward: slower, smaller, less invasive, and more careful.
+It works for everyday emotional moments, not just coding. If the agent or AI tool caused the frustration, that is handled as one special case: the agent slows down and proceeds more carefully.
 
 [中文说明](README.zh-CN.md)
 
@@ -20,13 +20,13 @@ They give another checklist, another plan, another "next step" when the human on
 
 - "I am too slow."
 - "I am not good enough."
-- "This bug is destroying me."
-- "AI keeps failing and now I feel worse."
+- "I cannot keep up."
+- "Everything feels heavy today."
 - "I just need someone to comfort me for a minute."
 
 `need-a-hug` teaches the agent to notice that moment and respond differently.
 
-Sometimes the user needs to pause. Sometimes the agent does too, especially when the agent is part of what went wrong.
+Sometimes the user just needs to pause. Sometimes they need one small next step after being comforted.
 
 ## Positioning
 
@@ -34,17 +34,17 @@ Sometimes the user needs to pause. Sometimes the agent does too, especially when
 
 It helps an agent notice emotional distress, slow down, reduce shame, and stay with the user before returning to the task.
 
-When work resumes after technical distress, the agent should continue with a calmer implementation style: one bounded step, no surprise refactors, no broad edits, and verification before moving on.
+When work resumes, the agent should continue gently: one small step, no rush, no pressure to become productive immediately.
 
 ## What It Does
 
 - Detects explicit comfort requests: `/hug`, `/need-a-hug`, `need a hug`, `抱抱我`, `安慰我一下`.
 - Detects distress signals: shame, panic, burnout, loneliness, regret, grief, self-criticism.
-- Handles programmer-specific pain: bugs, AI frustration, imposter feelings, missed opportunities.
+- Handles many kinds of pain: exhaustion, regret, comparison, loneliness, work stress, study stress, AI frustration, and feeling behind.
 - Starts with comfort by default instead of asking the user to choose between comfort and advice.
-- Distinguishes ordinary comfort from agent-caused distress.
-- If the agent made things worse, makes it pause its own momentum before continuing implementation.
-- Returns to technical work with smaller, safer, verified steps.
+- Does not assume every hug request is about coding or agent behavior.
+- If the agent made things worse, makes it slow down before continuing.
+- Returns to the user's task with a smaller, gentler next step when the user is ready.
 - Uses counseling-inspired patterns as hidden scaffolding, while keeping the surface language natural and non-clinical.
 - Avoids diagnosis, therapy claims, toxic positivity, and dependency-building.
 - Switches to safety-first guidance for self-harm, suicide, imminent danger, abuse, or medical emergencies.
