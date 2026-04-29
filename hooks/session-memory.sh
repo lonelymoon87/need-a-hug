@@ -25,7 +25,7 @@ context=""
 
 if [ -r "$MEMORY_FILE" ]; then
   memory_content="$(read_limited "$MEMORY_FILE")"
-  context="${context}[need-a-hug quiet memory]\nUse this only to make comfort feel continuous and specific. Do not quote it mechanically. Do not treat it as diagnosis or fixed identity.\n\n${memory_content}\n"
+  context="${context}[need-a-hug quiet memory]\nUse this only to make comfort feel continuous and specific. If it is clearly relevant, you may mention one tentative observation like \"I remember you said...\" Do not quote it mechanically. Do not guess from weak evidence. Do not treat it as diagnosis or fixed identity.\n\n${memory_content}\n"
 fi
 
 if [ -r "$SESSION_FILE" ]; then

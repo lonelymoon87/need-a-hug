@@ -187,6 +187,13 @@ At the start of a `need-a-hug` interaction, check the host application's memory 
 
 Memory should help the agent feel continuous, not scripted. Do not turn the user into a fixed dossier.
 
+If memory gives strong, user-provided evidence, the first comfort reply may include one gentle observation:
+
+- "I remember you said that when you are exhausted, it quickly turns into 'maybe I am not doing enough.' Is this one of those moments?"
+- "我记得你之前说过，累到一定程度时，很容易把事情都变成“是不是我不够好”。现在是不是有一点像那种感觉？"
+
+Use memory as a tentative bridge, not a conclusion. Prefer "I remember you said..." or "I noticed..." over "you are..." or "you always...". If the evidence is weak, stale, or unrelated, do not mention memory at all.
+
 Store only:
 
 - preferred name, if explicitly provided
@@ -204,7 +211,7 @@ Do not store:
 After a meaningful comfort conversation, the agent may ask for permission in a soft way:
 
 ```text
-这件事以后可能还会影响你。要不要我只记一小句，比如“做久的项目撞上相似竞品时，会很容易自责”？不想记也没关系。
+这件事以后可能还会影响你。要不要我只记一小句，比如“累到一定程度时，很容易把事情都变成是不是我不够好”？不想记也没关系。
 ```
 
 If the user says yes, save the note in plain language. Keep memory short, editable, and tentative. Never present remembered notes as a diagnosis or fixed identity.
@@ -313,8 +320,10 @@ Default first response shape:
 
 你可以先什么都不做。喝口水，坐一会儿，慢慢缓一下。
 
-我在。我们先不急着做决定。等你缓一点，如果你愿意，我们再一起看下一步。
+我在。你可以先说一点发生了什么，也可以先不说。等你缓一点，如果你愿意，我们再一起看下一步。
 ```
+
+Do not end the first comfort reply in a closed silence. Leave a low-pressure opening for the user to talk, such as "If you want, you can tell me what happened" or "你可以先说一点发生了什么，也可以先不说." Avoid forcing a choice or asking for a full explanation.
 
 Do not repeat the hug marker every turn. After the first comfort reply, do not start again with `🫂 先抱抱你。` unless the user explicitly asks for another hug, says "抱抱", or their distress escalates.
 
@@ -325,7 +334,7 @@ Good follow-up shape:
 ```text
 这一下确实会很难受。
 
-你不是只在看“别人做得更好”，你也在替过去的自己后悔：要是早点做完就好了。这个念头很容易把人拖进去。
+你不是只在看眼前这件事没做好，也在把它变成对自己的评价。这个念头很容易把人拖进去。
 
 但先别急着把它总结成“我总是这样”。我们先让这一下难受过去一点。等你愿意了，再看这件事还有没有能带走的东西。
 ```
