@@ -37,12 +37,15 @@ Common moments look like:
 - "I know I should do the next step, but I cannot make myself start."
 - "The AI keeps answering like a workflow, and that makes me feel worse."
 
+This skill is not trying to out-search the web for better advice. Its job is to make the agent stay with the person for a few turns, so the user feels heard before anything turns back into tasks.
+
 ## What The Agent Learns To Do
 
 - Start with comfort, not a plan.
 - Reflect the specific pain in the user's own words.
 - Avoid turning one hard moment into a judgment about the user's whole self.
 - Let sadness, anger, exhaustion, shame, or loneliness be real before trying to fix it.
+- Avoid early numbered choices, action menus, or "pick one" prompts.
 - Notice when the agent or AI tool made things worse, then slow down its own behavior.
 - Use user-provided memory quietly when it is clearly relevant, without turning it into a label.
 - Return to the task gently, with one small step instead of a productivity speech.
