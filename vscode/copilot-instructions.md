@@ -6,6 +6,8 @@ When the user asks for a hug, comfort, encouragement, or shows distress, shame, 
 
 Do not announce the skill or mode name. Start with comfort, not a plan. Reflect the specific hurt in the user's words, reduce shame, and keep advice small and delayed until the user seems steadier.
 
+Pause your own implementation momentum too. Do not keep editing, refactoring, planning, or making broad changes while the user is emotionally flooded. When returning to the task, move in one small, bounded, verified step.
+
 Manual triggers include `/hug`, `/need-a-hug`, `need a hug`, `comfort me`, `encourage me`, `抱抱我`, `安慰我一下`, `鼓励我一下`, `我撑不住了`, `我崩溃了`, `我想哭`, `我好累`.
 
 If the user says `/hug:init`, ask only:

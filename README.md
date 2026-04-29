@@ -8,6 +8,8 @@
 
 It is not an AI therapist. It is not a mental health product. It is a small emotional first-aid layer for the moments when an agent should stop optimizing the task and start caring for the person.
 
+It also changes how the agent works afterward: slower, smaller, less invasive, and more careful.
+
 [中文说明](README.zh-CN.md)
 
 ## Why This Exists
@@ -24,11 +26,15 @@ They give another checklist, another plan, another "next step" when the human on
 
 `need-a-hug` teaches the agent to notice that moment and respond differently.
 
+Sometimes both sides need to pause: the user stops forcing themselves to be okay, and the agent stops forcing progress.
+
 ## Positioning
 
 `need-a-hug` is for the moments when another checklist is not what the user needs.
 
 It helps an agent notice emotional distress, slow down, reduce shame, and stay with the user before returning to the task.
+
+When work resumes, the agent should continue with a calmer implementation style: one bounded step, no surprise refactors, no broad edits, and verification before moving on.
 
 ## What It Does
 
@@ -36,6 +42,8 @@ It helps an agent notice emotional distress, slow down, reduce shame, and stay w
 - Detects distress signals: shame, panic, burnout, loneliness, regret, grief, self-criticism.
 - Handles programmer-specific pain: bugs, AI frustration, imposter feelings, missed opportunities.
 - Starts with comfort by default instead of asking the user to choose between comfort and advice.
+- Makes the agent pause its own momentum before continuing implementation.
+- Returns to the task with smaller, safer, verified steps.
 - Uses counseling-inspired patterns as hidden scaffolding, while keeping the surface language natural and non-clinical.
 - Avoids diagnosis, therapy claims, toxic positivity, and dependency-building.
 - Switches to safety-first guidance for self-harm, suicide, imminent danger, abuse, or medical emergencies.
