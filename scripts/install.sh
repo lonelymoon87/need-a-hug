@@ -7,7 +7,7 @@ PROJECT_DIR="$PWD"
 usage() {
   cat <<'EOF'
 Usage:
-  ./scripts/install.sh <target> [--project <dir>]
+  ./scripts/install.sh [target] [--project <dir>]
 
 Targets:
   codex        Install skill and prompt commands to ~/.codex
@@ -22,11 +22,64 @@ Targets:
   all          Install common global targets, plus project adapters
 
 Examples:
+  ./scripts/install.sh
   ./scripts/install.sh codex
   ./scripts/install.sh claude
   ./scripts/install.sh cursor --project ~/my-project
   ./scripts/install.sh all --project .
 EOF
+}
+
+choose_target() {
+  if [ ! -t 0 ]; then
+    usage
+    exit 1
+  fi
+
+  cat <<'EOF'
+Install need-a-hug for:
+
+  1) Codex
+  2) Claude Code
+  3) Cursor project
+  4) Kiro project
+  5) VSCode Copilot project
+  6) OpenCode
+  7) OpenClaw
+  8) Google Antigravity
+  9) CodeBuddy
+  10) All common targets
+
+EOF
+
+  read -r -p "Choose a target [1]: " choice
+  choice="${choice:-1}"
+
+  case "$choice" in
+    1|codex) TARGET="codex" ;;
+    2|claude) TARGET="claude" ;;
+    3|cursor) TARGET="cursor" ;;
+    4|kiro) TARGET="kiro" ;;
+    5|vscode) TARGET="vscode" ;;
+    6|opencode) TARGET="opencode" ;;
+    7|openclaw) TARGET="openclaw" ;;
+    8|antigravity) TARGET="antigravity" ;;
+    9|codebuddy) TARGET="codebuddy" ;;
+    10|all) TARGET="all" ;;
+    *)
+      echo "Unknown choice: $choice" >&2
+      exit 1
+      ;;
+  esac
+
+  case "$TARGET" in
+    cursor|kiro|vscode|all)
+      read -r -p "Project directory [$PROJECT_DIR]: " project
+      if [ -n "$project" ]; then
+        PROJECT_DIR="$(cd "$project" && pwd)"
+      fi
+      ;;
+  esac
 }
 
 copy_dir() {
@@ -97,12 +150,12 @@ install_codebuddy() {
 }
 
 if [ "$#" -lt 1 ]; then
-  usage
-  exit 1
+  TARGET=""
+  choose_target
+else
+  TARGET="$1"
+  shift
 fi
-
-TARGET="$1"
-shift
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
