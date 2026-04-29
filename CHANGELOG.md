@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.2
+
+- Added installable release assets: `need-a-hug.skill` for drag-and-drop skill import and `need-a-hug-claude-plugin.zip` for Claude Code plugin installs with hooks and commands.
+- Updated plugin metadata version to match published releases.
+- Clarified that pure skill imports do not include Claude Code hooks; hooks require the plugin or repo installer path.
+
+## 0.3.1
+
+- Polished Chinese comfort examples to avoid awkward translated phrasing such as "接住/被接住".
+- Added English style guidance to avoid therapy-slogan phrasing like "hold space", "being held", and "seen and heard".
+- Synchronized wording guidance across Codex, Cursor, Kiro, VS Code, and command prompts.
+- Updated README examples and reference corpora so recommended examples use plainer, more natural language.
+
 ## 0.3.0
 
 - Reworked the README and Chinese README around the emotional value of the skill.

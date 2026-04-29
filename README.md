@@ -135,6 +135,10 @@ cd need-a-hug
 
 The installer asks which agent to set up. Open a new agent session after installing.
 
+For agents that support drag-and-drop skill import, use the release asset named `need-a-hug.skill`. That asset contains only the portable core skill. It does not include Claude Code hooks or slash commands.
+
+For Claude Code users who want the optional hooks and commands, install the plugin release asset `need-a-hug-claude-plugin.zip` or use the repo installer.
+
 ### Advanced
 
 Install directly for one target:
@@ -159,7 +163,7 @@ git pull
 
 ### Manual Install
 
-If you prefer not to run a script, copy `skills/need-a-hug/` into your agent's skill directory. Platform adapters live in `cursor/`, `kiro/`, `vscode/`, and `commands/`.
+If you prefer not to run a script, copy `skills/need-a-hug/` into your agent's skill directory. Platform adapters live in `cursor/`, `kiro/`, `vscode/`, and `commands/`. Claude Code hooks live in `hooks/` and only apply when installed as a plugin or through the repo installer.
 
 ## Safety Boundary
 

@@ -135,6 +135,10 @@ cd need-a-hug
 
 安装脚本会询问你要安装到哪个 Agent。安装后重新打开一个 Agent 会话。
 
+如果你的 Agent 支持拖拽导入 skill，请使用 release asset 里的 `need-a-hug.skill`。这个文件只包含可移植的核心 skill，不包含 Claude Code hooks 或 slash commands。
+
+如果你使用 Claude Code，并且想启用可选 hooks 和 commands，请使用 `need-a-hug-claude-plugin.zip` 这个 plugin 产物，或使用本仓库的安装脚本。
+
 ### 高级用法
 
 也可以直接指定平台：
@@ -159,7 +163,7 @@ git pull
 
 ### 手动安装
 
-如果不想运行脚本，把 `skills/need-a-hug/` 复制到对应工具的 skills 目录即可。Cursor、Kiro、VSCode 和 Codex prompt 的适配文件分别在 `cursor/`、`kiro/`、`vscode/` 和 `commands/`。
+如果不想运行脚本，把 `skills/need-a-hug/` 复制到对应工具的 skills 目录即可。Cursor、Kiro、VSCode 和 Codex prompt 的适配文件分别在 `cursor/`、`kiro/`、`vscode/` 和 `commands/`。Claude Code hooks 在 `hooks/` 里，只有通过 plugin 或仓库安装脚本安装时才会生效。
 
 ## 设计原则
 
