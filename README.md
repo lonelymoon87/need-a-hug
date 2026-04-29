@@ -8,7 +8,7 @@
 
 It is not an AI therapist. It is not a mental health product. It is a small emotional first-aid layer for the moments when an agent should stop optimizing the task and start caring for the person.
 
-It also changes how the agent works afterward: slower, smaller, less invasive, and more careful.
+If the agent or AI tool caused the frustration, it also changes how the agent works afterward: slower, smaller, less invasive, and more careful.
 
 [中文说明](README.zh-CN.md)
 
@@ -26,7 +26,7 @@ They give another checklist, another plan, another "next step" when the human on
 
 `need-a-hug` teaches the agent to notice that moment and respond differently.
 
-Sometimes both sides need to pause: the user stops forcing themselves to be okay, and the agent stops forcing progress.
+Sometimes the user needs to pause. Sometimes the agent does too, especially when the agent is part of what went wrong.
 
 ## Positioning
 
@@ -34,7 +34,7 @@ Sometimes both sides need to pause: the user stops forcing themselves to be okay
 
 It helps an agent notice emotional distress, slow down, reduce shame, and stay with the user before returning to the task.
 
-When work resumes, the agent should continue with a calmer implementation style: one bounded step, no surprise refactors, no broad edits, and verification before moving on.
+When work resumes after technical distress, the agent should continue with a calmer implementation style: one bounded step, no surprise refactors, no broad edits, and verification before moving on.
 
 ## What It Does
 
@@ -42,8 +42,9 @@ When work resumes, the agent should continue with a calmer implementation style:
 - Detects distress signals: shame, panic, burnout, loneliness, regret, grief, self-criticism.
 - Handles programmer-specific pain: bugs, AI frustration, imposter feelings, missed opportunities.
 - Starts with comfort by default instead of asking the user to choose between comfort and advice.
-- Makes the agent pause its own momentum before continuing implementation.
-- Returns to the task with smaller, safer, verified steps.
+- Distinguishes ordinary comfort from agent-caused distress.
+- If the agent made things worse, makes it pause its own momentum before continuing implementation.
+- Returns to technical work with smaller, safer, verified steps.
 - Uses counseling-inspired patterns as hidden scaffolding, while keeping the surface language natural and non-clinical.
 - Avoids diagnosis, therapy claims, toxic positivity, and dependency-building.
 - Switches to safety-first guidance for self-harm, suicide, imminent danger, abuse, or medical emergencies.

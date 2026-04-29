@@ -8,7 +8,7 @@
 - Changed optional initialization to ask only for a preferred name.
 - Added quiet long-term memory guidance with explicit-consent storage.
 - Renamed the optional memory template away from profile language.
-- Added a shared pause behavior: when comfort mode is active, the agent pauses its own implementation momentum and returns with smaller, safer, verified steps.
+- Added distress-source routing: ordinary comfort remains person-first, while agent-caused distress adds stricter agent pause, stabilization, and smaller verified implementation steps.
 
 ## 0.1.0
 
