@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.4
+
+- Made the core `SKILL.md` more English-dominant for international skill marketplaces while keeping Chinese triggers and localized comfort guidance in references.
+- Reworked the English and Chinese README copy to feel warmer and more invitation-based, with simpler examples that show users can send one line or directly describe the problem.
+- Added language-specific README demo GIFs for one-line and problem-first usage.
+
 ## 0.3.3
 
 - Refactored the core AgentSkill so `SKILL.md` stays under the Agent Skills recommended 500-line limit, with detailed comfort flow moved into `references/comfort-protocol.md`.

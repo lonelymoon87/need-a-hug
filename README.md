@@ -1,43 +1,67 @@
 # need-a-hug
 
 > Sometimes you just need a hug.
->
-> 抱抱一下吧，我只关心你累不累。
 
 [中文说明](README.zh-CN.md)
 
-`need-a-hug` is a lightweight AgentSkill for the moments when a person does not need another checklist yet.
+This is a slightly unusual skill.
 
-It helps an agent notice distress, stop pushing the task forward, and answer with warmth first. Then, when the user is steadier, the agent can return with one smaller next step.
+Most skills teach an agent how to be faster, sharper, more capable, more useful.
 
-![A short emotional shift demo: user feels exhausted and self-critical, agent comforts first, then returns gently.](assets/emotion-shift.gif)
+This one asks the agent to notice whether you are tired.
+
+Some moments are not ready to be solved yet.
+
+You may be tired, ashamed, frustrated with an agent, or just done explaining. You may not need analysis yet. You may not need optimization or a plan.
+
+You may just need the agent to stop pushing for a minute and answer like there is a person on the other side.
+
+`need-a-hug` is a lightweight AgentSkill for those moments.
+
+Whenever you want comfort, encouragement, or a small pause before returning to the work, just send:
+
+```text
+need a hug
+```
+
+You can also skip the trigger and simply say what happened.
+
+<table>
+  <tr>
+    <td align="center"><img src="assets/demo-en-one-line.gif" alt="Send only need a hug, and the agent comforts first." width="100%"></td>
+    <td align="center"><img src="assets/demo-en-problem.gif" alt="Describe the problem directly, and the agent slows the pace." width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center">One line is enough</td>
+    <td align="center">Or say what happened</td>
+  </tr>
+</table>
 
 ## The Moment It Is For
 
 Most agents keep solving while the person is already overwhelmed.
 
-They offer another plan, another list, another way to optimize the work. But sometimes the message underneath is quieter:
+They keep trying to move the task forward. That can be useful later, but sometimes it arrives too early.
+
+This skill is for moments like:
 
 ```text
-I am so tired.
-I keep trying, but nothing seems to get lighter.
-Maybe I am just not built for this.
+I am tired and I do not know how to explain it.
 ```
 
-In that moment, the useful response is not to rush into strategy.
+```text
+This bug is destroying me.
+```
 
-It is to slow down, name the hurt without making it dramatic, reduce shame, and stay close enough that the user can breathe again.
+```text
+I do not want advice yet. I just need someone to hear me.
+```
 
-Common moments look like:
+```text
+The AI keeps answering like a workflow, and that makes me feel worse.
+```
 
-- "I am tired and I do not know how to explain it."
-- "I keep thinking about the same thing and cannot calm down."
-- "I do not want advice yet. I just need someone to hear me."
-- "I feel alone, even though nothing dramatic happened."
-- "I know I should do the next step, but I cannot make myself start."
-- "The AI keeps answering like a workflow, and that makes me feel worse."
-
-This skill is not trying to out-search the web for better advice. Its job is to make the agent slow down with the person for a few turns, so the user feels less alone before anything turns back into tasks.
+`need-a-hug` helps the agent slow down, name the hurt without making it dramatic, reduce shame, and stay close enough that the user can breathe again.
 
 ## What The Agent Learns To Do
 
@@ -49,9 +73,27 @@ This skill is not trying to out-search the web for better advice. Its job is to 
 
 It is not therapy or medical care. It is a small emotional first-aid layer for the moments when an agent should stop optimizing the task and start caring for the person.
 
-## Example
+## Examples
 
-User:
+You do not have to write a perfect prompt.
+
+You can send one line:
+
+```text
+need a hug
+```
+
+The agent should comfort first, not immediately ask for background.
+
+You can describe the problem directly:
+
+```text
+AI keeps getting it wrong, and I feel like I am losing my mind.
+```
+
+The agent should first acknowledge that this is frustrating, separate the tool failure from your worth, and then help you recover one small fact at a time.
+
+You can also say more:
 
 ```text
 I am exhausted.
@@ -60,17 +102,7 @@ but everything still feels heavy.
 Maybe I am just not strong enough for this.
 ```
 
-Agent with `need-a-hug`:
-
-```text
-That sounds really heavy.
-
-Not dramatic. Just heavy in the way things get when you have been carrying too much for too long.
-
-I do not want to rush you into a plan while you are this tired. And I do not want "I am not strong enough" to become the only explanation. Sometimes a person is not weak. Sometimes they have just been running on empty for too long.
-
-You can tell me a little about what has been weighing on you, if you want. You can also just pause for a minute. We will go slowly.
-```
+The agent should help that sentence feel less final before turning it into a plan.
 
 ## When It Triggers
 
@@ -82,10 +114,6 @@ Manual triggers:
 need a hug
 comfort me
 encourage me
-抱抱我
-安慰我一下
-鼓励我一下
-我撑不住了
 ```
 
 It can also activate from clear emotional signals: shame, panic, burnout, loneliness, regret, grief, self-criticism, exhaustion, or a user saying they feel like they are falling apart.
@@ -110,9 +138,6 @@ Over time, the agent can remember small things you choose to share, like what na
 /hug:off
 /back-to-work
 back to the task
-回到任务
-继续做事
-别安慰了，直接解决问题
 ```
 
 When work resumes, the agent should not snap back into pressure. It should continue with a smaller, calmer step.
