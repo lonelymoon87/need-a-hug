@@ -1,12 +1,12 @@
 {
   "name": "need-a-hug",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Sometimes you just need a hug. Lightweight emotional first aid for agents when users are overwhelmed, ashamed, burned out, lonely, anxious, or having a hard day.",
   "author": {
     "name": "need-a-hug"
   },
-  "homepage": "https://github.com/need-a-hug/need-a-hug",
-  "repository": "https://github.com/need-a-hug/need-a-hug",
+  "homepage": "https://github.com/lonelymoon87/need-a-hug",
+  "repository": "https://github.com/lonelymoon87/need-a-hug",
   "license": "MIT",
   "keywords": [
     "agent-skill",

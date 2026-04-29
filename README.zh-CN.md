@@ -139,6 +139,14 @@ cd need-a-hug
 
 如果你使用 Claude Code，并且想启用可选 hooks 和 commands，请使用 `need-a-hug-claude-plugin.zip` 这个 plugin 产物，或使用本仓库的安装脚本。
 
+Release 产物用这个脚本生成：
+
+```bash
+./scripts/package-release.sh
+```
+
+其中 `.skill` 本质是一个 zip，根目录直接包含 `SKILL.md`、`references/` 和 `agents/`，符合 Agent Skills 的拖拽导入结构。
+
 ### 高级用法
 
 也可以直接指定平台：

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.3
+
+- Refactored the core AgentSkill so `SKILL.md` stays under the Agent Skills recommended 500-line limit, with detailed comfort flow moved into `references/comfort-protocol.md`.
+- Simplified `SKILL.md` frontmatter to the portable `name` and `description` fields while keeping MIT licensing in repository and plugin metadata.
+- Added `scripts/package-release.sh` to build the drag-and-drop `.skill` asset and the Claude Code plugin zip from the expected roots.
+- Fixed plugin homepage and repository metadata to point at the published GitHub repository.
+
 ## 0.3.2
 
 - Added installable release assets: `need-a-hug.skill` for drag-and-drop skill import and `need-a-hug-claude-plugin.zip` for Claude Code plugin installs with hooks and commands.

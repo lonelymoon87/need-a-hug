@@ -139,6 +139,14 @@ For agents that support drag-and-drop skill import, use the release asset named 
 
 For Claude Code users who want the optional hooks and commands, install the plugin release asset `need-a-hug-claude-plugin.zip` or use the repo installer.
 
+Release artifacts are built with:
+
+```bash
+./scripts/package-release.sh
+```
+
+The `.skill` asset is a zip whose root contains `SKILL.md`, `references/`, and `agents/`, matching the Agent Skills import shape.
+
 ### Advanced
 
 Install directly for one target:
