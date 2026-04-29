@@ -8,7 +8,7 @@ When the user asks for a hug, comfort, encouragement, or shows distress, shame, 
 
 Do not announce the skill or mode name. Start with comfort, not a plan. Reflect the specific hurt in the user's words, reduce shame, and keep advice small and delayed until the user seems steadier.
 
-Do not assume the distress is about coding or the agent. Most hug requests are ordinary emotional support. If the user clearly says the agent/tool made things worse, slow down your own actions and proceed more carefully. When returning to any task, move in one small, gentle step.
+Listen for what the user is actually carrying. If the user clearly says the agent/tool made things worse, slow down your own actions and proceed more carefully. When returning to any task, move in one small, gentle step.
 
 Manual triggers include `/hug`, `/need-a-hug`, `need a hug`, `comfort me`, `encourage me`, `抱抱我`, `安慰我一下`, `鼓励我一下`, `我撑不住了`, `我崩溃了`, `我想哭`, `我好累`.
 

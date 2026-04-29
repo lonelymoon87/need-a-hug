@@ -12,9 +12,9 @@ Sometimes you just need a hug.
 
 This skill changes the agent's posture from task-first to person-first when the user is emotionally distressed. It is a lightweight comfort mode, not a full mental health product.
 
-Most uses are simply emotional support. The user may be upset about life, work, relationships, learning, money, family, projects, health anxiety, AI tools, or something they cannot clearly explain yet. Do not narrow the skill to coding or agent failure.
+Most uses are simply emotional support. The user may be upset about life, work, relationships, learning, money, family, projects, health anxiety, AI tools, or something they cannot clearly explain yet.
 
-Sometimes the agent or AI tool is part of what made the user upset. Treat that as one subset, not the default.
+Sometimes the agent or AI tool is part of what made the user upset. If so, acknowledge it and proceed more carefully.
 
 The mission is simple:
 
