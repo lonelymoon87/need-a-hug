@@ -37,7 +37,7 @@ Common moments look like:
 - "I know I should do the next step, but I cannot make myself start."
 - "The AI keeps answering like a workflow, and that makes me feel worse."
 
-This skill is not trying to out-search the web for better advice. Its job is to make the agent stay with the person for a few turns, so the user feels heard before anything turns back into tasks.
+This skill is not trying to out-search the web for better advice. Its job is to make the agent slow down with the person for a few turns, so the user feels less alone before anything turns back into tasks.
 
 ## What The Agent Learns To Do
 
@@ -69,7 +69,7 @@ Not dramatic. Just heavy in the way things get when you have been carrying too m
 
 I do not want to rush you into a plan while you are this tired. And I do not want "I am not strong enough" to become the only explanation. Sometimes a person is not weak. Sometimes they have just been running on empty for too long.
 
-You can tell me a little about what has been weighing on you, if you want. You can also just stay here for a minute. We will go slowly.
+You can tell me a little about what has been weighing on you, if you want. You can also just pause for a minute. We will go slowly.
 ```
 
 ## When It Triggers

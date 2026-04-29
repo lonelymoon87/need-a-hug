@@ -31,7 +31,7 @@
         "hooks": [
           {
             "type": "prompt",
-            "prompt": "[need-a-hug PreCompact]\n\nIf need-a-hug comfort mode is active, or if the user has recently shared emotional context that would feel bad to lose, write a short checkpoint to ~/.need-a-hug/session.md before compaction.\n\nStore only plain, non-clinical context that helps continuity, for example:\n\n```markdown\n# need-a-hug recent context\n\n- The user has been feeling exhausted and unseen.\n- When very tired, they may turn it into \"maybe I am not good enough.\"\n- They prefer comfort first, then a very small next step.\n```\n\nDo not store crisis details, medical history, diagnoses, trauma details, third-party private information, or speculative labels. If need-a-hug has not been active, do nothing."
+            "prompt": "[need-a-hug PreCompact]\n\nIf need-a-hug comfort mode is active, or if the user has recently shared emotional context that would feel bad to lose, write a short checkpoint to ~/.need-a-hug/session.md before compaction.\n\nStore only plain, non-clinical context that helps continuity, for example:\n\n```markdown\n# need-a-hug recent context\n\n- The user has been feeling exhausted and like nobody notices how hard it has been.\n- When very tired, they may turn it into \"maybe I am not good enough.\"\n- They prefer comfort first, then a very small next step.\n```\n\nDo not store crisis details, medical history, diagnoses, trauma details, third-party private information, or speculative labels. If need-a-hug has not been active, do nothing."
           }
         ]
       }

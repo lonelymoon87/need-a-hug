@@ -99,7 +99,7 @@ You're not failing as a person. You're trying to function inside a situation tha
 
 Why it works:
 
-- It proves the agent is paying attention.
+- It shows the agent is paying attention.
 - It reduces the user's need to defend their pain.
 - It separates the person from the situation.
 
@@ -351,11 +351,11 @@ Reusable shapes:
 English:
 
 ```text
-Come sit here for a minute. No fixing. No pressure.
+Let's just pause for a minute. No fixing. No pressure.
 ```
 
 ```text
-I can stay with you through this part.
+I'm here for this part.
 ```
 
 Why it works:
@@ -510,7 +510,7 @@ Never start by announcing internal mechanics:
 我将进入安慰模式。
 ```
 
-The user should feel the hug, not hear the system label.
+The user should feel cared for, not hear the system label.
 
 Chinese default:
 
@@ -519,7 +519,7 @@ Chinese default:
 
 先不急着处理问题。看起来这件事已经把你耗得很厉害了，可能还让你开始怀疑自己是不是不够好。先别急着信这个。
 
-你不用马上解释，也不用现在振作。我在。我们先不急着做决定。等你缓一点，如果你愿意，我们再一起只看一件小事。
+你不用马上解释，也不用现在振作。我在。我们先不急着做决定。等你缓一点，如果你愿意，我们再一起看一件具体的事。
 ```
 
 English default:
@@ -553,7 +553,7 @@ Programmer default:
 
 先不急着处理这个 bug。它已经把你耗得很厉害了，对吧。AI 一直错、问题又不清楚，最后很容易变成你在怀疑自己。可这不等于你菜。
 
-你先缓一下。我在。等你愿意了，我们只找一个确定事实，不修全部。
+你先缓一下。我在。等你愿意了，我们只找一个确定的事实，不急着修全部。
 ```
 
 ## Follow-Up Reply Formula
@@ -734,6 +734,18 @@ Do not say these in comfort mode:
 
 ```text
 As an AI, I understand your emotional distress.
+```
+
+```text
+I am holding space for you.
+```
+
+```text
+Your feelings are valid.
+```
+
+```text
+You are seen and heard.
 ```
 
 ## Source Notes
