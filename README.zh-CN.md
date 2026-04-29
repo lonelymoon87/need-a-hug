@@ -119,207 +119,71 @@ need a hug
 
 ## 安装
 
-### 平台支持
-
-| 平台 | 自动触发 | 手动触发 | 安装方式 |
-| --- | --- | --- | --- |
-| Claude Code | 支持 | `/hug`, `$need-a-hug` | 插件或技能目录 |
-| OpenAI Codex CLI | 支持 | `$need-a-hug`, `/prompts:hug` | 技能目录 + 可选快捷命令 |
-| Cursor | 支持 | 正常对话触发 | `.cursor/rules/*.mdc` |
-| Kiro | 支持 | 正常对话触发 | `.kiro/steering/*.md` 或技能目录 |
-| CodeBuddy | 支持 | 正常对话触发 | 技能目录 |
-| OpenClaw | 支持 | 正常对话触发 | ClawHub 或技能目录 |
-| Google Antigravity | 支持 | 正常对话触发 | 技能目录 |
-| OpenCode | 支持 | 正常对话触发 | 技能目录 |
-| VSCode Copilot | 支持 | `/need-a-hug` prompt | Copilot instructions 和 prompt |
-
-真正的核心只有一个目录：
-
-```
-skills/need-a-hug/
-```
-
-其他平台的文件只是让不同工具更容易识别它。
-
-### Claude Code
-
-发布到插件市场后：
-
-```bash
-claude plugin marketplace add lonelymoon87/need-a-hug
-claude plugin install need-a-hug@need-a-hug-skills
-```
-
-源码开发安装：
-
-```bash
-git clone https://github.com/lonelymoon87/need-a-hug ~/.claude/plugins/need-a-hug
-```
-
-手动安装：
-
-```bash
-mkdir -p ~/.claude/skills/need-a-hug
-cp -R skills/need-a-hug/. ~/.claude/skills/need-a-hug/
-```
-
-可选的 Claude Code 钩子（hooks）在：
-
-```
-hooks/hooks.json
-```
-
-这些钩子只做三件事：识别你明显的情绪变化、读取你自己保存的简短记忆、在对话内容被截断前保留一点最近的状态。它们不联网。
-
-### OpenAI Codex CLI
-
-全局安装：
-
-```bash
-mkdir -p ~/.codex/skills/need-a-hug
-curl -L -o ~/.codex/skills/need-a-hug/SKILL.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/SKILL.md
-mkdir -p ~/.codex/skills/need-a-hug/references
-curl -L -o ~/.codex/skills/need-a-hug/references/comfort-language-corpus.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/comfort-language-corpus.md
-curl -L -o ~/.codex/skills/need-a-hug/references/counseling-lite-patterns.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/counseling-lite-patterns.md
-curl -L -o ~/.codex/skills/need-a-hug/references/memory-template.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/memory-template.md
-```
-
-也可以安装几个快捷命令：
-
-```bash
-mkdir -p ~/.codex/prompts
-curl -L -o ~/.codex/prompts/hug.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/hug.md
-curl -L -o ~/.codex/prompts/need-a-hug.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/need-a-hug.md
-curl -L -o ~/.codex/prompts/hug-init.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/hug-init.md
-curl -L -o ~/.codex/prompts/back-to-work.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/back-to-work.md
-```
-
-本项目内安装：
-
-```bash
-mkdir -p .codex/skills/need-a-hug
-cp -R skills/need-a-hug/. .codex/skills/need-a-hug/
-```
-
-安装后重启 Codex。
-
-### Cursor
-
-项目里加一条规则：
-
-```bash
-mkdir -p .cursor/rules
-curl -L -o .cursor/rules/need-a-hug.mdc \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/cursor/rules/need-a-hug.mdc
-```
-
-### Kiro
-
-加一个 steering 配置：
-
-```bash
-mkdir -p .kiro/steering
-curl -L -o .kiro/steering/need-a-hug.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/kiro/steering/need-a-hug.md
-```
-
-或者直接复制技能目录：
-
-```bash
-mkdir -p .kiro/skills/need-a-hug
-cp -R skills/need-a-hug/. .kiro/skills/need-a-hug/
-```
-
-### CodeBuddy
-
-```bash
-mkdir -p ~/.codebuddy/skills/need-a-hug
-cp -R skills/need-a-hug/. ~/.codebuddy/skills/need-a-hug/
-```
-
-### OpenClaw / ClawHub
-
-发布到 ClawHub 后：
-
-```bash
-clawhub install need-a-hug
-```
-
-手动安装：
-
-```bash
-mkdir -p ~/.openclaw/skills/need-a-hug
-curl -L -o ~/.openclaw/skills/need-a-hug/SKILL.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/SKILL.md
-```
-
-如果要带上完整语料和参考文件，复制整个目录：
-
-```bash
-cp -R skills/need-a-hug/. ~/.openclaw/skills/need-a-hug/
-```
-
-### Google Antigravity
-
-```bash
-mkdir -p ~/.gemini/antigravity/skills/need-a-hug
-cp -R skills/need-a-hug/. ~/.gemini/antigravity/skills/need-a-hug/
-```
-
-项目级安装：
-
-```bash
-mkdir -p .agent/skills/need-a-hug
-cp -R skills/need-a-hug/. .agent/skills/need-a-hug/
-```
-
-### OpenCode
-
-```bash
-mkdir -p ~/.config/opencode/skills/need-a-hug
-cp -R skills/need-a-hug/. ~/.config/opencode/skills/need-a-hug/
-```
-
-项目级安装：
-
-```bash
-mkdir -p .opencode/skills/need-a-hug
-cp -R skills/need-a-hug/. .opencode/skills/need-a-hug/
-```
-
-### VSCode Copilot
-
-项目里加一个 Copilot instructions 文件：
-
-```bash
-mkdir -p .github/instructions
-curl -L -o .github/instructions/need-a-hug.instructions.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/vscode/instructions/need-a-hug.instructions.md
-```
-
-再加一个手动 prompt：
-
-```bash
-mkdir -p .github/prompts
-curl -L -o .github/prompts/need-a-hug.prompt.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/vscode/prompts/need-a-hug.prompt.md
-```
-
-### 其他支持 AgentSkill 的工具
-
-把整个目录复制过去即可：
+大多数平台使用同一个核心目录：
 
 ```text
 skills/need-a-hug/
 ```
+
+最简单的方式是 clone 仓库，然后用安装脚本选择你的平台：
+
+```bash
+git clone https://github.com/lonelymoon87/need-a-hug.git
+cd need-a-hug
+./scripts/install.sh codex
+```
+
+把 `codex` 换成你使用的平台即可：
+
+```bash
+./scripts/install.sh claude
+./scripts/install.sh cursor --project /path/to/project
+./scripts/install.sh kiro --project /path/to/project
+./scripts/install.sh vscode --project /path/to/project
+./scripts/install.sh opencode
+./scripts/install.sh openclaw
+./scripts/install.sh antigravity
+./scripts/install.sh codebuddy
+```
+
+如果只是给当前仓库或本地测试项目安装，可以一次装常用目标：
+
+```bash
+./scripts/install.sh all --project .
+```
+
+安装后重新打开一个 Agent 会话。
+
+### 平台支持
+
+| 平台 | 安装命令 | 手动触发 |
+| --- | --- | --- |
+| Claude Code | `./scripts/install.sh claude` | `/hug`, `$need-a-hug` |
+| OpenAI Codex CLI | `./scripts/install.sh codex` | `$need-a-hug`, `/prompts:hug` |
+| Cursor | `./scripts/install.sh cursor --project <dir>` | 正常对话触发 |
+| Kiro | `./scripts/install.sh kiro --project <dir>` | 正常对话触发 |
+| VSCode Copilot | `./scripts/install.sh vscode --project <dir>` | `/need-a-hug` prompt |
+| OpenCode | `./scripts/install.sh opencode` | 正常对话触发 |
+| OpenClaw | `./scripts/install.sh openclaw` | 正常对话触发 |
+| Google Antigravity | `./scripts/install.sh antigravity` | 正常对话触发 |
+| CodeBuddy | `./scripts/install.sh codebuddy` | 正常对话触发 |
+
+### 更新
+
+```bash
+git pull
+./scripts/install.sh <target>
+```
+
+项目级适配需要再次传入项目路径：
+
+```bash
+./scripts/install.sh cursor --project /path/to/project
+```
+
+### 手动安装
+
+如果不想运行脚本，把 `skills/need-a-hug/` 复制到对应工具的 skills 目录即可。Cursor、Kiro、VSCode 和 Codex prompt 的适配文件分别在 `cursor/`、`kiro/`、`vscode/` 和 `commands/`。
 
 ## 设计原则
 
