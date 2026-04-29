@@ -8,7 +8,7 @@
 - Changed optional initialization to ask only for a preferred name.
 - Added quiet long-term memory guidance with explicit-consent storage.
 - Renamed the optional memory template away from profile language.
-- Added distress-source routing: ordinary comfort remains person-first, while agent-caused distress adds stricter agent pause, stabilization, and smaller verified implementation steps.
+- Generalized the skill beyond coding: ordinary emotional support is the default, while agent/tool-caused distress is handled as one special case.
 
 ## 0.1.0
 
