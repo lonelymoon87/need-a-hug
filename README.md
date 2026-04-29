@@ -12,7 +12,7 @@ It is not an AI therapist. It is not a mental health product. It is a small emot
 
 ## Why This Exists
 
-Most agents keep solving while the user is quietly falling apart.
+Most agents keep solving while the user is struggling.
 
 They give another checklist, another plan, another "next step" when the human on the other side may be thinking:
 
@@ -47,7 +47,7 @@ User:
 ```text
 I found somebody else already created similar tools.
 I have been working on this for a long time.
-Now I feel sad. Why am I always delayed?
+Now I feel sad. Why am I always behind?
 ```
 
 Agent with `need-a-hug`:
@@ -84,7 +84,7 @@ The core source of truth is:
 skills/need-a-hug/
 ```
 
-Platform-specific files are thin wrappers around the same behavior.
+Platform-specific files are just adapters for the same behavior.
 
 ### Claude Code
 
@@ -114,7 +114,7 @@ Optional Claude Code hooks live in:
 hooks/hooks.json
 ```
 
-They add distress-triggered activation, quiet memory restore from `~/.need-a-hug/memory.md`, and a pre-compact continuity checkpoint. They do not make network calls.
+They add emotion-aware activation, quiet memory restore from `~/.need-a-hug/memory.md`, and a checkpoint before conversation context gets compressed. They do not make network calls.
 
 ### OpenAI Codex CLI
 
