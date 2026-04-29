@@ -4,72 +4,130 @@
 >
 > 抱抱一下吧，我只关心你累不累。
 
-`need-a-hug` is a lightweight AgentSkill that turns your agent into a calm, warm comfort companion when the user is overwhelmed, ashamed, burned out, lonely, grieving, anxious, or just having a hard day.
-
-It is not an AI therapist. It is not a mental health product. It is a small emotional first-aid layer for the moments when an agent should stop optimizing the task and start caring for the person.
-
-It works for everyday emotional moments. If the agent or AI tool caused the frustration, the agent should slow down and proceed more carefully.
-
 [中文说明](README.zh-CN.md)
 
-## Why This Exists
+`need-a-hug` is a lightweight AgentSkill for the moments when a person does not need another checklist yet.
 
-Most agents keep solving while the user is struggling.
+It helps an agent notice distress, stop pushing the task forward, and answer with warmth first. Then, when the user is steadier, the agent can return with one smaller next step.
 
-They give another checklist, another plan, another "next step" when the human on the other side may be thinking:
+![A short emotional shift demo: user feels exhausted and self-critical, agent comforts first, then returns gently.](assets/emotion-shift.gif)
 
-- "I am too slow."
-- "I am not good enough."
-- "I cannot keep up."
-- "Everything feels heavy today."
-- "I just need someone to comfort me for a minute."
+## The Moment It Is For
 
-`need-a-hug` teaches the agent to notice that moment and respond differently.
+Most agents keep solving while the person is already overwhelmed.
 
-Sometimes the user just needs to pause. Sometimes they need one small next step after being comforted.
+They offer another plan, another list, another way to optimize the work. But sometimes the message underneath is quieter:
 
-## Positioning
+```text
+I am so tired.
+I keep trying, but nothing seems to get lighter.
+Maybe I am just not built for this.
+```
 
-`need-a-hug` is for the moments when another checklist is not what the user needs.
+In that moment, the useful response is not to rush into strategy.
 
-It helps an agent notice emotional distress, slow down, reduce shame, and stay with the user before returning to the task.
+It is to slow down, name the hurt without making it dramatic, reduce shame, and stay close enough that the user can breathe again.
 
-When work resumes, the agent should continue gently: one small step, no rush, no pressure to become productive immediately.
+Common moments look like:
 
-## What It Does
+- "I am tired and I do not know how to explain it."
+- "I keep thinking about the same thing and cannot calm down."
+- "I do not want advice yet. I just need someone to hear me."
+- "I feel alone, even though nothing dramatic happened."
+- "I know I should do the next step, but I cannot make myself start."
+- "The AI keeps answering like a workflow, and that makes me feel worse."
 
-- Detects explicit comfort requests: `/hug`, `/need-a-hug`, `need a hug`, `抱抱我`, `安慰我一下`.
-- Detects distress signals: shame, panic, burnout, loneliness, regret, grief, self-criticism.
-- Handles many kinds of pain: exhaustion, regret, comparison, loneliness, work stress, study stress, AI frustration, and feeling behind.
-- Starts with comfort by default instead of asking the user to choose between comfort and advice.
-- Listens for what the user is actually carrying.
-- If the agent made things worse, slows down before continuing.
-- Returns to the user's task with a smaller, gentler next step when the user is ready.
-- Uses counseling-inspired patterns as hidden scaffolding, while keeping the surface language natural and non-clinical.
-- Avoids diagnosis, therapy claims, toxic positivity, and dependency-building.
-- Switches to safety-first guidance for self-harm, suicide, imminent danger, abuse, or medical emergencies.
+## What The Agent Learns To Do
+
+- Start with comfort, not a plan.
+- Reflect the specific pain in the user's own words.
+- Avoid turning one hard moment into a judgment about the user's whole self.
+- Let sadness, anger, exhaustion, shame, or loneliness be real before trying to fix it.
+- Notice when the agent or AI tool made things worse, then slow down its own behavior.
+- Use user-provided memory quietly when it is clearly relevant, without turning it into a label.
+- Return to the task gently, with one small step instead of a productivity speech.
+- Match the user's language instead of being pulled around by examples or trigger words.
+
+It is not an AI therapist. It is not a mental health product. It is a small emotional first-aid layer for the moments when an agent should stop optimizing the task and start caring for the person.
 
 ## Example
 
 User:
 
 ```text
-I found somebody else already created similar tools.
-I have been working on this for a long time.
-Now I feel sad. Why am I always behind?
+I am exhausted.
+I keep doing what I am supposed to do,
+but everything still feels heavy.
+Maybe I am just not strong enough for this.
 ```
 
 Agent with `need-a-hug`:
 
 ```text
-That hurts.
+That sounds really heavy.
 
-You worked on this for a long time, and seeing someone else already build something similar can make the whole effort suddenly feel late or wasted. It makes sense that your mind goes straight to "why am I always delayed?"
+Not dramatic. Just heavy in the way things get when you have been carrying too much for too long.
 
-But try not to let this one painful moment become a sentence about who you are. Maybe there is regret here. Maybe there is a real lesson. But it still does not mean your work was pointless, or that you are always too late.
+I do not want to rush you into a plan while you are this tired. And I do not want "I am not strong enough" to become the only explanation. Sometimes a person is not weak. Sometimes they have just been running on empty for too long.
 
-For now, we do not have to turn this into a plan. Let it be sad for a minute. When you feel a little steadier, we can look at what, if anything, is still yours to carry forward.
+You can tell me a little about what has been weighing on you, if you want. You can also just stay here for a minute. We will go slowly.
 ```
+
+## When It Triggers
+
+Manual triggers:
+
+```text
+/hug
+/need-a-hug
+need a hug
+comfort me
+encourage me
+抱抱我
+安慰我一下
+鼓励我一下
+我撑不住了
+```
+
+It can also activate from clear emotional signals: shame, panic, burnout, loneliness, regret, grief, self-criticism, exhaustion, or a user saying they feel like they are falling apart.
+
+## Optional Personalization
+
+```text
+/hug:init
+```
+
+This only asks for a preferred name:
+
+```text
+What should I call you?
+
+It is okay if you would rather not say. We can keep going.
+```
+
+No tone survey. No country question. No therapy intake form. The agent should learn softly from the conversation.
+
+If the user has explicitly saved comfort context, the agent may use it gently:
+
+```text
+I remember you said that when you are exhausted, it quickly turns into "maybe I am not doing enough."
+Is this one of those moments?
+```
+
+If there is no strong evidence, it should not guess.
+
+## Exit
+
+```text
+/hug:off
+/back-to-work
+back to the task
+回到任务
+继续做事
+别安慰了，直接解决问题
+```
+
+When work resumes, the agent should not snap back into pressure. It should continue with a smaller, calmer step.
 
 ## Installation
 
@@ -100,14 +158,14 @@ Platform-specific files are just adapters for the same behavior.
 Plugin install after publishing:
 
 ```bash
-claude plugin marketplace add <owner>/need-a-hug
+claude plugin marketplace add lonelymoon87/need-a-hug
 claude plugin install need-a-hug@need-a-hug-skills
 ```
 
 Developer install from source:
 
 ```bash
-git clone https://github.com/<owner>/need-a-hug ~/.claude/plugins/need-a-hug
+git clone https://github.com/lonelymoon87/need-a-hug ~/.claude/plugins/need-a-hug
 ```
 
 Manual skill install:
@@ -132,14 +190,14 @@ Global install:
 ```bash
 mkdir -p ~/.codex/skills/need-a-hug
 curl -L -o ~/.codex/skills/need-a-hug/SKILL.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/SKILL.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/SKILL.md
 mkdir -p ~/.codex/skills/need-a-hug/references
 curl -L -o ~/.codex/skills/need-a-hug/references/comfort-language-corpus.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/references/comfort-language-corpus.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/comfort-language-corpus.md
 curl -L -o ~/.codex/skills/need-a-hug/references/counseling-lite-patterns.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/references/counseling-lite-patterns.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/counseling-lite-patterns.md
 curl -L -o ~/.codex/skills/need-a-hug/references/memory-template.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/references/memory-template.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/memory-template.md
 ```
 
 Optional prompt commands:
@@ -147,13 +205,13 @@ Optional prompt commands:
 ```bash
 mkdir -p ~/.codex/prompts
 curl -L -o ~/.codex/prompts/hug.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/commands/hug.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/hug.md
 curl -L -o ~/.codex/prompts/need-a-hug.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/commands/need-a-hug.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/need-a-hug.md
 curl -L -o ~/.codex/prompts/hug-init.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/commands/hug-init.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/hug-init.md
 curl -L -o ~/.codex/prompts/back-to-work.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/commands/back-to-work.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/back-to-work.md
 ```
 
 Project-level install:
@@ -181,7 +239,7 @@ Project-level rule:
 ```bash
 mkdir -p .cursor/rules
 curl -L -o .cursor/rules/need-a-hug.mdc \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/cursor/rules/need-a-hug.mdc
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/cursor/rules/need-a-hug.mdc
 ```
 
 ### Kiro
@@ -191,7 +249,7 @@ Steering file:
 ```bash
 mkdir -p .kiro/steering
 curl -L -o .kiro/steering/need-a-hug.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/kiro/steering/need-a-hug.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/kiro/steering/need-a-hug.md
 ```
 
 AgentSkill format:
@@ -221,7 +279,7 @@ Manual install:
 ```bash
 mkdir -p ~/.openclaw/skills/need-a-hug
 curl -L -o ~/.openclaw/skills/need-a-hug/SKILL.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/SKILL.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/SKILL.md
 ```
 
 For the full language corpus, copy the whole directory:
@@ -265,7 +323,7 @@ Project instruction file:
 ```bash
 mkdir -p .github/instructions
 curl -L -o .github/instructions/need-a-hug.instructions.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/vscode/instructions/need-a-hug.instructions.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/vscode/instructions/need-a-hug.instructions.md
 ```
 
 Manual prompt:
@@ -273,7 +331,7 @@ Manual prompt:
 ```bash
 mkdir -p .github/prompts
 curl -L -o .github/prompts/need-a-hug.prompt.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/vscode/prompts/need-a-hug.prompt.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/vscode/prompts/need-a-hug.prompt.md
 ```
 
 ### Other AgentSkill-Compatible Tools
@@ -285,49 +343,6 @@ skills/need-a-hug/SKILL.md
 ```
 
 Copy the whole `skills/need-a-hug/` directory into that tool's skill directory.
-
-## Usage
-
-### Manual Triggers
-
-```text
-/hug
-/need-a-hug
-need a hug
-comfort me
-抱抱我
-安慰我一下
-鼓励我一下
-我撑不住了
-```
-
-### Optional Personalization
-
-```text
-/hug:init
-```
-
-This only asks for a preferred name:
-
-```text
-What should I call you?
-
-You can skip this. The skill should learn tone and preferences naturally from conversation, not through a survey.
-```
-
-The skill must not infer your name from OS usernames, paths, Git config, emails, or account metadata.
-
-Tone and preferences are learned softly from conversation. The skill should not make the user fill out a survey before it can be kind.
-
-### Exit
-
-```text
-/hug:off
-/back-to-work
-回到任务
-继续做事
-别安慰了，直接解决问题
-```
 
 ## Safety Boundary
 

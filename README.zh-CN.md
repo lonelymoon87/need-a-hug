@@ -1,27 +1,18 @@
 # need-a-hug
 
-> 有时候，你只是需要一个拥抱。
 > 抱抱一下吧，我只关心你累不累。
 
-`need-a-hug` 是一个给 AI Agent 用的技能。它不负责替你完成某个具体任务；它只做一件事：当你焦虑、崩溃、自责、孤独、长期疲惫，或者只是今天真的很难受的时候，让 Agent 先别急着解决问题，先陪你一下。
+`need-a-hug` 是一个很轻的 AgentSkill。它不是让 Agent 多做一个功能，而是让 Agent 在你已经很累、很难受、很自责的时候，先别急着继续解决问题。
 
-它不是心理咨询工具，也不能替代专业帮助。它只是让 Agent 在合适的时候先慢下来，别急着给方案，先看见你。
+有时候你不需要另一个计划。
 
-生活、工作、学习、关系、项目、选择、失落、比较，都可以是你想要一个 hug 的原因。
+你只是想先被好好接住一下。
 
-如果这次难受刚好是 Agent 或 AI 工具造成的，那才是一个特殊情况：Agent 也要停一下，不再急着推进，不再用更多动作制造更多压力。
+![一段很短的情绪变化演示：用户很累、开始怀疑自己，Agent 先安慰，再轻轻回到下一步。](assets/emotion-shift.gif)
 
-有时候，你缺的不是另一个计划。
+## 它适合的时刻
 
-你只是太累了，想有人好好陪一下。
-
-## 一句话
-
-让 Agent 在你撑不住的时候，先说人话，先陪你一下；等你缓过来，再用更小、更稳的步子回到事情本身。
-
-## 为什么需要
-
-很多 Agent 在你最难受的时候，还在继续输出：
+很多 Agent 在你最难受的时候，还会继续输出：
 
 - 下一步计划
 - 检查清单
@@ -29,57 +20,113 @@
 - “你可以试试...”
 - “我们来分析一下...”
 
-但你可能真正想说的话是：
+但你心里真正冒出来的，可能是：
 
-- “我是不是太差劲了”
-- “我做得太慢了”
-- “我又错过机会了”
-- “今天真的好累”
-- “我不知道为什么就是很难受”
-- “我只是想有人抱抱我”
+```text
+我最近真的好累。
+明明一直在撑，但好像什么都没有变好。
+是不是我就是不够好。
+```
 
-`need-a-hug` 让 Agent 在这种时候先停一下，别急着解决问题，先陪你缓过来。
+这个时候，马上复盘、马上规划、马上讲道理，通常都太早了。
 
-如果是 Agent 把事情弄乱了，它也会提醒 Agent：现在不是继续猛冲的时候。先停、先看清楚，再动手。
+更有用的是先慢下来，把那种刺痛、自责、委屈或者疲惫说清楚一点，让它不要立刻变成一句“我这个人不行”。
 
-## 定位
+更常见的场景其实是这些：
 
-`need-a-hug` 适合那些“再给一个方案也没用”的时刻。
+- “我很累，但我也说不清楚为什么。”
+- “脑子一直在想同一件事，停不下来。”
+- “我现在还不想听建议，只想先有人听我说。”
+- “明明也没发生什么大事，但就是觉得很孤单。”
+- “我知道应该做下一步，可就是动不了。”
+- “AI 一直像流程一样回复，反而让我更难受。”
 
-它让 Agent 先注意到你的累、自责、焦虑和失落。等你缓过来一点，再一起看事情怎么往下走。
+## 它会让 Agent 怎么变
 
-## 它会做什么
+- 先安慰，不急着给方案
+- 听你真正难受的地方，而不是套进某个固定问题
+- 不把一个困难时刻上升成对你整个人的判断
+- 允许难过、生气、疲惫、羞耻先存在一会儿
+- 如果刚好是 Agent 或 AI 工具把你弄崩了，它会先放慢自己的动作
+- 如果你明确保存过一些上下文，它可以轻轻用一下，但不会把你贴成某种标签
+- 回到任务时，只给一个更小、更稳的下一步
+- 跟随你的语言，不会因为示例里有别的语言就突然切换
 
-- 你说 `/hug`、`抱抱我`、`安慰我一下` 时，直接安慰你
-- 你没明说，但已经在自责、崩溃、孤独、后悔、疲惫的时候，尽量感知到
-- 先听你真正难受的是什么，不急着把它套进某一种问题里
-- 默认先安慰，不会一上来就问“你要安慰还是建议？”
-- 如果刚好是 Agent/AI 工具把你弄崩了，它会先慢下来，别继续添乱
-- 如果要回到事情本身，默认只看一个很小、很明确的下一步
-- 回应会借鉴心理咨询中的倾听和共情方式，但不会讲术语
-- 不诊断，不承诺治疗，不灌鸡汤，也不制造情绪依赖
-- 如果你提到自伤、自杀、正在发生的危险、虐待或医疗紧急情况，会优先把安全放在第一位
+它不是心理咨询工具，也不能替代专业帮助。它只是一个很小的情绪急救层：当 Agent 应该先关心人，而不是继续优化任务时，它提醒 Agent 慢下来。
 
 ## 示例
 
 你：
 
-```
-我做了很久的这个项目，发现已经有别人实现得更好了。
-我做事总是拖沓，白白错失了好多机会。
+```text
+我最近真的很累。
+明明也在努力，工作和生活却都没有明显变好。
+有时候会觉得，是不是我就是不够好。
 ```
 
 Agent：
 
+```text
+这听起来真的很累。
+
+不是那种睡一觉就一定能好的累，而是撑了很久、一直没有被好好看见的累。人到这种时候，很容易把所有事情都往自己身上收，最后变成一句：是不是我不够好。
+
+我想先替你把这句话放轻一点。你现在很累，不等于你很差。你没有立刻变好，也不等于你没有在努力。
+
+你可以先说一点，最近最压着你的是什么。也可以先不说，就在这里缓一会儿。我们不急着把整个人生都想明白。
 ```
-这一下确实很刺痛。
 
-你做了很久，结果发现别人已经走在前面了，很容易一下子开始怪自己：为什么不快一点，为什么又拖了。这个念头会很重，也很伤人。
+## 怎么触发
 
-但先别急着把它总结成“我总是错过机会”。这件事可能有教训，也可能真的有遗憾，可它不能直接证明你这个人不行。
+手动触发：
 
-我们先不复盘。先让这种难受的感觉过去一点。等你缓过来一点，如果你愿意，再看你这段时间攒下来的理解，哪些还能留下来。
+```text
+/hug
+/need-a-hug
+need a hug
+抱抱我
+安慰我一下
+鼓励我一下
+我撑不住了
 ```
+
+它也会尽量感知明显的情绪信号，比如自责、崩溃、孤独、后悔、长期疲惫、很强的比较感，或者你说自己快撑不住了。
+
+## 可选初始化
+
+```text
+/hug:init
+```
+
+它只会问一个问题：
+
+```text
+以后我可以怎么称呼你？
+
+不想说也没关系，我们直接继续。
+```
+
+不会一开始就让你填一堆偏好，不问国家地区，也不做心理咨询式问卷。称呼之外的东西，Agent 应该从后面的对话里慢慢感知。
+
+如果你明确保存过一点安慰相关的记忆，Agent 可以轻轻提一句：
+
+```text
+我记得你之前说过，累到一定程度时，很容易把事情都变成“是不是我不够好”。现在是不是有一点像那种感觉？
+```
+
+如果证据不够强，它就不应该硬猜。
+
+## 退出
+
+```text
+/hug:off
+/back-to-work
+回到任务
+继续做事
+别安慰了，直接解决问题
+```
+
+回到任务以后，Agent 也不应该突然恢复成高压推进。它应该继续小一点、慢一点、稳一点。
 
 ## 安装
 
@@ -110,14 +157,14 @@ skills/need-a-hug/
 发布到插件市场后：
 
 ```bash
-claude plugin marketplace add <owner>/need-a-hug
+claude plugin marketplace add lonelymoon87/need-a-hug
 claude plugin install need-a-hug@need-a-hug-skills
 ```
 
 源码开发安装：
 
 ```bash
-git clone https://github.com/<owner>/need-a-hug ~/.claude/plugins/need-a-hug
+git clone https://github.com/lonelymoon87/need-a-hug ~/.claude/plugins/need-a-hug
 ```
 
 手动安装：
@@ -142,14 +189,14 @@ hooks/hooks.json
 ```bash
 mkdir -p ~/.codex/skills/need-a-hug
 curl -L -o ~/.codex/skills/need-a-hug/SKILL.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/SKILL.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/SKILL.md
 mkdir -p ~/.codex/skills/need-a-hug/references
 curl -L -o ~/.codex/skills/need-a-hug/references/comfort-language-corpus.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/references/comfort-language-corpus.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/comfort-language-corpus.md
 curl -L -o ~/.codex/skills/need-a-hug/references/counseling-lite-patterns.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/references/counseling-lite-patterns.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/counseling-lite-patterns.md
 curl -L -o ~/.codex/skills/need-a-hug/references/memory-template.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/references/memory-template.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/memory-template.md
 ```
 
 也可以安装几个快捷命令：
@@ -157,13 +204,13 @@ curl -L -o ~/.codex/skills/need-a-hug/references/memory-template.md \
 ```bash
 mkdir -p ~/.codex/prompts
 curl -L -o ~/.codex/prompts/hug.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/commands/hug.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/hug.md
 curl -L -o ~/.codex/prompts/need-a-hug.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/commands/need-a-hug.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/need-a-hug.md
 curl -L -o ~/.codex/prompts/hug-init.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/commands/hug-init.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/hug-init.md
 curl -L -o ~/.codex/prompts/back-to-work.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/commands/back-to-work.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/back-to-work.md
 ```
 
 本项目内安装：
@@ -182,7 +229,7 @@ cp -R skills/need-a-hug/. .codex/skills/need-a-hug/
 ```bash
 mkdir -p .cursor/rules
 curl -L -o .cursor/rules/need-a-hug.mdc \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/cursor/rules/need-a-hug.mdc
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/cursor/rules/need-a-hug.mdc
 ```
 
 ### Kiro
@@ -192,7 +239,7 @@ curl -L -o .cursor/rules/need-a-hug.mdc \
 ```bash
 mkdir -p .kiro/steering
 curl -L -o .kiro/steering/need-a-hug.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/kiro/steering/need-a-hug.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/kiro/steering/need-a-hug.md
 ```
 
 或者直接复制技能目录：
@@ -222,7 +269,7 @@ clawhub install need-a-hug
 ```bash
 mkdir -p ~/.openclaw/skills/need-a-hug
 curl -L -o ~/.openclaw/skills/need-a-hug/SKILL.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/skills/need-a-hug/SKILL.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/SKILL.md
 ```
 
 如果要带上完整语料和参考文件，复制整个目录：
@@ -266,7 +313,7 @@ cp -R skills/need-a-hug/. .opencode/skills/need-a-hug/
 ```bash
 mkdir -p .github/instructions
 curl -L -o .github/instructions/need-a-hug.instructions.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/vscode/instructions/need-a-hug.instructions.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/vscode/instructions/need-a-hug.instructions.md
 ```
 
 再加一个手动 prompt：
@@ -274,7 +321,7 @@ curl -L -o .github/instructions/need-a-hug.instructions.md \
 ```bash
 mkdir -p .github/prompts
 curl -L -o .github/prompts/need-a-hug.prompt.md \
-  https://raw.githubusercontent.com/<owner>/need-a-hug/main/vscode/prompts/need-a-hug.prompt.md
+  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/vscode/prompts/need-a-hug.prompt.md
 ```
 
 ### 其他支持 AgentSkill 的工具
@@ -283,46 +330,6 @@ curl -L -o .github/prompts/need-a-hug.prompt.md \
 
 ```text
 skills/need-a-hug/
-```
-
-## 使用
-
-手动触发：
-
-```text
-/hug
-/need-a-hug
-need a hug
-抱抱我
-安慰我一下
-鼓励我一下
-我撑不住了
-```
-
-可选初始化：
-
-```text
-/hug:init
-```
-
-它会问：
-
-```text
-以后我可以怎么称呼你？
-
-不想说也没关系，我们直接继续。
-```
-
-不会一开始就让你填一堆偏好。称呼之外的东西，Agent 应该从后面的对话里慢慢感知。
-
-退出：
-
-```text
-/hug:off
-/back-to-work
-回到任务
-继续做事
-别安慰了，直接解决问题
 ```
 
 ## 设计原则
