@@ -43,15 +43,11 @@ This skill is not trying to out-search the web for better advice. Its job is to 
 
 - Start with comfort, not a plan.
 - Reflect the specific pain in the user's own words.
-- Avoid turning one hard moment into a judgment about the user's whole self.
-- Let sadness, anger, exhaustion, shame, or loneliness be real before trying to fix it.
-- Avoid early numbered choices, action menus, or "pick one" prompts.
-- Notice when the agent or AI tool made things worse, then slow down its own behavior.
-- Use user-provided memory quietly when it is clearly relevant, without turning it into a label.
-- Return to the task gently, with one small step instead of a productivity speech.
-- Match the user's language instead of being pulled around by examples or trigger words.
+- Stay with hard feelings long enough for the user to feel less alone.
+- Keep the user's dignity intact when they start blaming themselves.
+- Return to the task gently when the user is ready.
 
-It is not an AI therapist. It is not a mental health product. It is a small emotional first-aid layer for the moments when an agent should stop optimizing the task and start caring for the person.
+It is not therapy or medical care. It is a small emotional first-aid layer for the moments when an agent should stop optimizing the task and start caring for the person.
 
 ## Example
 
@@ -100,24 +96,13 @@ It can also activate from clear emotional signals: shame, panic, burnout, loneli
 /hug:init
 ```
 
-This only asks for a preferred name:
-
 ```text
 What should I call you?
 
 It is okay if you would rather not say. We can keep going.
 ```
 
-No tone survey. No country question. No therapy intake form. The agent should learn softly from the conversation.
-
-If the user has explicitly saved comfort context, the agent may use it gently:
-
-```text
-I remember you said that when you are exhausted, it quickly turns into "maybe I am not doing enough."
-Is this one of those moments?
-```
-
-If there is no strong evidence, it should not guess.
+Over time, the agent can remember small things you choose to share, like what name feels right or what usually helps you feel steadier.
 
 ## Exit
 
