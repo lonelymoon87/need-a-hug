@@ -119,218 +119,71 @@ When work resumes, the agent should not snap back into pressure. It should conti
 
 ## Installation
 
-### Platform Support
-
-| Platform | Auto Trigger | Manual Trigger | Install Style |
-| --- | --- | --- | --- |
-| Claude Code | Yes | `/hug`, `$need-a-hug` | Plugin or skill directory |
-| OpenAI Codex CLI | Yes | `$need-a-hug`, `/prompts:hug` | Skill directory + optional prompts |
-| Cursor | Yes | Ask normally | `.cursor/rules/*.mdc` |
-| Kiro | Yes | Ask normally | `.kiro/steering/*.md` or skill directory |
-| CodeBuddy | Yes | Ask normally | Skill directory |
-| OpenClaw | Yes | Ask normally | ClawHub or skill directory |
-| Google Antigravity | Yes | Ask normally | Skill directory |
-| OpenCode | Yes | Ask normally | Skill directory |
-| VSCode Copilot | Yes | `/need-a-hug` prompt | Copilot instructions + prompt file |
-
-The core source of truth is:
+Most platforms use the same source folder:
 
 ```text
 skills/need-a-hug/
 ```
 
-Platform-specific files are just adapters for the same behavior.
-
-### Claude Code
-
-Plugin install after publishing:
+The easiest way is to clone the repo and run the installer for your agent:
 
 ```bash
-claude plugin marketplace add lonelymoon87/need-a-hug
-claude plugin install need-a-hug@need-a-hug-skills
+git clone https://github.com/lonelymoon87/need-a-hug.git
+cd need-a-hug
+./scripts/install.sh codex
 ```
 
-Developer install from source:
+Replace `codex` with the platform you use:
 
 ```bash
-git clone https://github.com/lonelymoon87/need-a-hug ~/.claude/plugins/need-a-hug
+./scripts/install.sh claude
+./scripts/install.sh cursor --project /path/to/project
+./scripts/install.sh kiro --project /path/to/project
+./scripts/install.sh vscode --project /path/to/project
+./scripts/install.sh opencode
+./scripts/install.sh openclaw
+./scripts/install.sh antigravity
+./scripts/install.sh codebuddy
 ```
 
-Manual skill install:
+For this repository or a local test project, you can install common targets at once:
 
 ```bash
-mkdir -p ~/.claude/skills/need-a-hug
-cp -R skills/need-a-hug/. ~/.claude/skills/need-a-hug/
+./scripts/install.sh all --project .
 ```
 
-Optional Claude Code hooks live in:
+Open a new agent session after installing.
 
-```text
-hooks/hooks.json
-```
+### Platform Support
 
-They add emotion-aware activation, quiet memory restore from `~/.need-a-hug/memory.md`, and a checkpoint before conversation context gets compressed. They do not make network calls.
+| Platform | Install Target | Manual Trigger |
+| --- | --- | --- |
+| Claude Code | `./scripts/install.sh claude` | `/hug`, `$need-a-hug` |
+| OpenAI Codex CLI | `./scripts/install.sh codex` | `$need-a-hug`, `/prompts:hug` |
+| Cursor | `./scripts/install.sh cursor --project <dir>` | Ask normally |
+| Kiro | `./scripts/install.sh kiro --project <dir>` | Ask normally |
+| VSCode Copilot | `./scripts/install.sh vscode --project <dir>` | `/need-a-hug` prompt |
+| OpenCode | `./scripts/install.sh opencode` | Ask normally |
+| OpenClaw | `./scripts/install.sh openclaw` | Ask normally |
+| Google Antigravity | `./scripts/install.sh antigravity` | Ask normally |
+| CodeBuddy | `./scripts/install.sh codebuddy` | Ask normally |
 
-### OpenAI Codex CLI
-
-Global install:
+### Update
 
 ```bash
-mkdir -p ~/.codex/skills/need-a-hug
-curl -L -o ~/.codex/skills/need-a-hug/SKILL.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/SKILL.md
-mkdir -p ~/.codex/skills/need-a-hug/references
-curl -L -o ~/.codex/skills/need-a-hug/references/comfort-language-corpus.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/comfort-language-corpus.md
-curl -L -o ~/.codex/skills/need-a-hug/references/counseling-lite-patterns.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/counseling-lite-patterns.md
-curl -L -o ~/.codex/skills/need-a-hug/references/memory-template.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/references/memory-template.md
+git pull
+./scripts/install.sh <target>
 ```
 
-Optional prompt commands:
+For project adapters, pass the project again:
 
 ```bash
-mkdir -p ~/.codex/prompts
-curl -L -o ~/.codex/prompts/hug.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/hug.md
-curl -L -o ~/.codex/prompts/need-a-hug.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/need-a-hug.md
-curl -L -o ~/.codex/prompts/hug-init.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/hug-init.md
-curl -L -o ~/.codex/prompts/back-to-work.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/commands/back-to-work.md
+./scripts/install.sh cursor --project /path/to/project
 ```
 
-Project-level install:
+### Manual Install
 
-```bash
-mkdir -p .codex/skills/need-a-hug
-cp -R skills/need-a-hug/. .codex/skills/need-a-hug/
-```
-
-Restart Codex after installing.
-
-Trigger it with:
-
-```text
-$need-a-hug
-/hug
-need a hug
-抱抱我
-```
-
-### Cursor
-
-Project-level rule:
-
-```bash
-mkdir -p .cursor/rules
-curl -L -o .cursor/rules/need-a-hug.mdc \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/cursor/rules/need-a-hug.mdc
-```
-
-### Kiro
-
-Steering file:
-
-```bash
-mkdir -p .kiro/steering
-curl -L -o .kiro/steering/need-a-hug.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/kiro/steering/need-a-hug.md
-```
-
-AgentSkill format:
-
-```bash
-mkdir -p .kiro/skills/need-a-hug
-cp -R skills/need-a-hug/. .kiro/skills/need-a-hug/
-```
-
-### CodeBuddy
-
-```bash
-mkdir -p ~/.codebuddy/skills/need-a-hug
-cp -R skills/need-a-hug/. ~/.codebuddy/skills/need-a-hug/
-```
-
-### OpenClaw / ClawHub
-
-Once published to ClawHub:
-
-```bash
-clawhub install need-a-hug
-```
-
-Manual install:
-
-```bash
-mkdir -p ~/.openclaw/skills/need-a-hug
-curl -L -o ~/.openclaw/skills/need-a-hug/SKILL.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/skills/need-a-hug/SKILL.md
-```
-
-For the full language corpus, copy the whole directory:
-
-```bash
-cp -R skills/need-a-hug/. ~/.openclaw/skills/need-a-hug/
-```
-
-### Google Antigravity
-
-```bash
-mkdir -p ~/.gemini/antigravity/skills/need-a-hug
-cp -R skills/need-a-hug/. ~/.gemini/antigravity/skills/need-a-hug/
-```
-
-Project-level install:
-
-```bash
-mkdir -p .agent/skills/need-a-hug
-cp -R skills/need-a-hug/. .agent/skills/need-a-hug/
-```
-
-### OpenCode
-
-```bash
-mkdir -p ~/.config/opencode/skills/need-a-hug
-cp -R skills/need-a-hug/. ~/.config/opencode/skills/need-a-hug/
-```
-
-Project-level install:
-
-```bash
-mkdir -p .opencode/skills/need-a-hug
-cp -R skills/need-a-hug/. .opencode/skills/need-a-hug/
-```
-
-### VSCode Copilot
-
-Project instruction file:
-
-```bash
-mkdir -p .github/instructions
-curl -L -o .github/instructions/need-a-hug.instructions.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/vscode/instructions/need-a-hug.instructions.md
-```
-
-Manual prompt:
-
-```bash
-mkdir -p .github/prompts
-curl -L -o .github/prompts/need-a-hug.prompt.md \
-  https://raw.githubusercontent.com/lonelymoon87/need-a-hug/main/vscode/prompts/need-a-hug.prompt.md
-```
-
-### Other AgentSkill-Compatible Tools
-
-Any tool that supports the AgentSkills `SKILL.md` format can use the core skill:
-
-```text
-skills/need-a-hug/SKILL.md
-```
-
-Copy the whole `skills/need-a-hug/` directory into that tool's skill directory.
+If you prefer not to run a script, copy `skills/need-a-hug/` into your agent's skill directory. Platform adapters live in `cursor/`, `kiro/`, `vscode/`, and `commands/`.
 
 ## Safety Boundary
 
