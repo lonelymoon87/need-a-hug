@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.3.4
 
 - Made the core `SKILL.md` more English-dominant for international skill marketplaces while keeping Chinese triggers and localized comfort guidance in references.
 - Reworked the English and Chinese README copy to feel warmer and more invitation-based, with simpler examples that show users can send one line or directly describe the problem.

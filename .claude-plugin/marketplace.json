@@ -9,7 +9,7 @@
     {
       "name": "need-a-hug",
       "description": "Lightweight emotional first aid for agents. Includes the core AgentSkill plus optional Claude Code hooks for distress-triggered comfort and short comfort memory continuity.",
-      "version": "0.3.3",
+      "version": "0.3.4",
       "source": "./",
       "author": {
         "name": "need-a-hug"
