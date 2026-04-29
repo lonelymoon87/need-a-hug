@@ -25,6 +25,7 @@ fi
     skills \
     commands \
     hooks \
+    assets \
     README.md \
     README.zh-CN.md \
     CHANGELOG.md \

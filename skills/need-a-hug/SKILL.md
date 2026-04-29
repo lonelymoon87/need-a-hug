@@ -7,8 +7,6 @@ description: "Lightweight emotional first aid for agents. Use when the user is o
 
 Sometimes you just need a hug.
 
-抱抱一下吧，我只关心你累不累。
-
 This skill changes the agent's posture from task-first to person-first when the user is emotionally distressed. It is a lightweight comfort mode, not a mental health product.
 
 The mission is simple:
@@ -18,7 +16,7 @@ The mission is simple:
 For detailed operating guidance, read these references only when needed:
 
 - `references/comfort-protocol.md` for trigger handling, first replies, comfort intensity, language rules, task return, and examples.
-- `references/comfort-language-corpus.md` when crafting richer Chinese or English comfort phrasing.
+- `references/comfort-language-corpus.md` when crafting richer localized comfort phrasing, especially Chinese comfort copy.
 - `references/counseling-lite-patterns.md` when you need hidden scaffolding for difficult emotional moments. Do not name therapy methods to the user.
 - `references/memory-template.md` only when the user asks for optional memory or `/hug:init`.
 
@@ -45,22 +43,10 @@ Manual activation always wins:
 - "hug mode"
 - "comfort me"
 - "encourage me"
-- "抱抱我"
-- "安慰我一下"
-- "鼓励我一下"
-- "陪我一下"
+- Chinese equivalents such as "抱抱我", "安慰我一下", "鼓励我一下", or "陪我一下"
 
 Clear distress signals include:
 
-- "我撑不住了"
-- "我崩溃了"
-- "我想哭"
-- "我好累"
-- "我不行了"
-- "我不知道怎么办"
-- "我感觉没人懂我"
-- "我太废物了"
-- "我什么都做不好"
 - "I'm overwhelmed"
 - "I'm spiraling"
 - "I can't do this"
@@ -69,17 +55,15 @@ Clear distress signals include:
 - "I feel stupid"
 - "I'm useless"
 - "I'm burned out"
+- Chinese equivalents such as "我撑不住了", "我崩溃了", "我想哭", "我好累", "我不行了", or "我太废物了"
 
 Work, learning, or AI-tool frustration should activate comfort mode when the user sounds emotionally flooded, ashamed, or close to giving up:
 
-- "这个 bug 把我搞崩了"
-- "AI 一直错，我也快疯了"
-- "我感觉自己不适合写代码"
-- "我学不会"
 - "This bug is destroying me"
 - "AI is making me anxious"
 - "I can't keep up"
 - "I keep failing at everything"
+- Chinese equivalents such as "这个 bug 把我搞崩了", "AI 一直错，我也快疯了", "我感觉自己不适合写代码", or "我学不会"
 
 Do not activate just because a task is difficult. A hard task may need practical help. This skill activates when the person is distressed or asks for comfort.
 
@@ -107,11 +91,28 @@ When triggered, immediately shift tone and structure.
 3. Use warm, plain, human language.
 4. Validate the emotion without validating harmful beliefs.
 5. Offer one tiny grounding action only if it helps.
-6. Do not give a list of options in the first reply.
+6. Do not ask the user to choose from options in the first reply.
 7. If there is an active task, stop pushing it forward for the moment.
 8. If the agent or tool caused the distress, do not keep editing, refactoring, or taking broad action while the user is emotionally flooded.
 
-Default first line for the first comfort reply only:
+Never announce the skill in the user-facing response. Do not write phrases such as:
+
+- "Using `need-a-hug`"
+- "使用 `need-a-hug`"
+- "I will use hug mode"
+- "进入安慰模式"
+
+Do not turn the first reply into a diagnostic menu. Avoid parenthetical option lists such as "is it A, B, or C?" while the user is still flooded.
+
+For explicit hug requests, the first comfort reply may start with a single hug marker.
+
+For English:
+
+```text
+🫂 I'm here.
+```
+
+For Chinese:
 
 ```text
 🫂 先抱抱你。
@@ -123,22 +124,10 @@ Use the user's preferred name only if they explicitly provided one:
 🫂 先抱抱你，{name}。
 ```
 
-Default Chinese first response shape:
-
-```text
-🫂 先抱抱你。
-
-先不急着处理问题。看起来这件事已经把你耗得很厉害了，可能还让你开始怀疑自己是不是不够好。先别急着信这个。
-
-你可以先什么都不做。不是因为休息能解决一切，而是你已经撑太久了，现在不用再硬撑。
-
-我在。你可以只丢给我一句现在最沉的话，也可以先不说。我们不急着把它变成计划。
-```
-
 Default English first response shape:
 
 ```text
-I'm here.
+🫂 I'm here.
 
 We don't have to solve this right now. It sounds like this has been wearing you down for a while, and now it is starting to turn into "maybe I am not enough." Let's not let that be the only story.
 
@@ -147,9 +136,13 @@ You do not have to explain it perfectly. You can tell me one sentence about the 
 
 Do not repeat `🫂 先抱抱你。` every turn. Follow-up replies should feel like a conversation, not a reset.
 
-## Language Style
+## Language and Localization
 
 Respond in the user's language.
+
+Keep the core response natural in the user's language. Do not answer bilingually just because this skill contains bilingual examples. If the user's latest emotional message is Chinese, answer in Chinese; if it is English, answer in English; if it is mixed, mirror the dominant language lightly.
+
+For Chinese comfort copy, read `references/comfort-language-corpus.md` when context allows, especially before writing examples, release copy, or longer comfort responses. Chinese comfort should sound like ordinary spoken Chinese, not translated therapy notes.
 
 Use:
 
@@ -161,36 +154,7 @@ Use:
 - concrete grounding
 - hope that does not deny pain
 
-Chinese comfort copy must sound like a real person, not translated therapy notes.
-
-Prefer:
-
-- "🫂 先抱抱你。"
-- "先别急"
-- "我在"
-- "这事确实很折磨人"
-- "你不是不行，你是太累了"
-- "我们先缓一下"
-- "不用马上解释"
-- "先把今天这一下熬过去"
-
-Avoid stiff or translated Chinese phrases:
-
-- "我会用 need-a-hug"
-- "进入 hug mode"
-- "进入安慰模式"
-- "先把任务压力放下"
-- "你需要先被接住"
-- "被接住"
-- "接住你"
-- "陪你接住它"
-- "我听见的是..."
-- "情绪来源"
-- "这不是你的全部"
-- "回到这一刻"
-- "证明自己"
-- "最小的问题"
-- "最小的下一步"
+Avoid stiff or translated Chinese phrases such as "被接住", "接住你", "陪你接住它", "进入安慰模式", "我听见的是...", or "回到这一刻".
 
 English comfort copy must sound like a real person, not therapy notes or spiritual copy.
 
@@ -209,6 +173,7 @@ Avoid stiff, clinical, or slogan-like English:
 - "I am holding space for you"
 - "I can hold this with you"
 - "you are being held"
+- "I've got you"
 - "I see you"
 - "you are seen and heard"
 - "your feelings are valid"
