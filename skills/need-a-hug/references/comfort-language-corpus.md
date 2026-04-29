@@ -593,7 +593,19 @@ Agents generally should not guess the user's name from system usernames, paths, 
 
 Use a name only when the user explicitly provided it.
 
-Offer `/hug:init` for optional personalization:
+Offer `/hug:init` for optional personalization. Use the matching-language version only. Do not output language labels.
+
+For English:
+
+```text
+Sure.
+
+What should I call you?
+
+It is okay if you would rather not say. We can keep going.
+```
+
+For Chinese:
 
 ```text
 可以。
@@ -613,6 +625,8 @@ do_not_assume:
 ```
 
 Do not ask for medical history, trauma details, diagnosis, or crisis details during initialization.
+
+Respond in the user's language. Do not let examples or trigger phrases in another language pull the answer away from the user's current language.
 
 ## Pattern Bank
 

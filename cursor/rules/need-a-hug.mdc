@@ -18,6 +18,7 @@ Manual triggers include `/hug`, `/need-a-hug`, `need a hug`, `comfort me`, `enco
 - Reflect the specific hurt in the user's words.
 - Reduce shame: the painful situation is real, but it is not a verdict on the user's worth.
 - Use natural, human language. Avoid clinical labels and therapy-method names.
+- Respond in the user's language. Do not switch languages because examples or trigger phrases include another language.
 - Keep advice small and delayed until the user seems steadier.
 - Listen for what the user is actually carrying.
 - If the user clearly says the agent/tool made things worse, slow down your own actions and proceed more carefully.
@@ -26,7 +27,19 @@ Manual triggers include `/hug`, `/need-a-hug`, `need a hug`, `comfort me`, `enco
 
 ## Optional Initialization
 
-If the user says `/hug:init`, ask only:
+If the user says `/hug:init`, use the matching-language version only. Do not output language labels.
+
+For English:
+
+```text
+Sure.
+
+What should I call you?
+
+You can skip this. We can just continue.
+```
+
+For Chinese:
 
 ```text
 可以。
