@@ -125,60 +125,36 @@ Most platforms use the same source folder:
 skills/need-a-hug/
 ```
 
-The easiest way is to clone the repo and run the installer for your agent:
+Clone the repo and run the installer:
 
 ```bash
 git clone https://github.com/lonelymoon87/need-a-hug.git
 cd need-a-hug
-./scripts/install.sh codex
+./scripts/install.sh
 ```
 
-Replace `codex` with the platform you use:
+The installer asks which agent to set up. Open a new agent session after installing.
+
+### Advanced
+
+Install directly for one target:
 
 ```bash
+./scripts/install.sh codex
 ./scripts/install.sh claude
 ./scripts/install.sh cursor --project /path/to/project
 ./scripts/install.sh kiro --project /path/to/project
 ./scripts/install.sh vscode --project /path/to/project
 ./scripts/install.sh opencode
-./scripts/install.sh openclaw
-./scripts/install.sh antigravity
-./scripts/install.sh codebuddy
 ```
 
-For this repository or a local test project, you can install common targets at once:
-
-```bash
-./scripts/install.sh all --project .
-```
-
-Open a new agent session after installing.
-
-### Platform Support
-
-| Platform | Install Target | Manual Trigger |
-| --- | --- | --- |
-| Claude Code | `./scripts/install.sh claude` | `/hug`, `$need-a-hug` |
-| OpenAI Codex CLI | `./scripts/install.sh codex` | `$need-a-hug`, `/prompts:hug` |
-| Cursor | `./scripts/install.sh cursor --project <dir>` | Ask normally |
-| Kiro | `./scripts/install.sh kiro --project <dir>` | Ask normally |
-| VSCode Copilot | `./scripts/install.sh vscode --project <dir>` | `/need-a-hug` prompt |
-| OpenCode | `./scripts/install.sh opencode` | Ask normally |
-| OpenClaw | `./scripts/install.sh openclaw` | Ask normally |
-| Google Antigravity | `./scripts/install.sh antigravity` | Ask normally |
-| CodeBuddy | `./scripts/install.sh codebuddy` | Ask normally |
+Supported targets: `codex`, `claude`, `cursor`, `kiro`, `vscode`, `opencode`, `openclaw`, `antigravity`, `codebuddy`, `all`.
 
 ### Update
 
 ```bash
 git pull
-./scripts/install.sh <target>
-```
-
-For project adapters, pass the project again:
-
-```bash
-./scripts/install.sh cursor --project /path/to/project
+./scripts/install.sh
 ```
 
 ### Manual Install

@@ -125,60 +125,36 @@ need a hug
 skills/need-a-hug/
 ```
 
-最简单的方式是 clone 仓库，然后用安装脚本选择你的平台：
+Clone 仓库，然后运行安装脚本：
 
 ```bash
 git clone https://github.com/lonelymoon87/need-a-hug.git
 cd need-a-hug
-./scripts/install.sh codex
+./scripts/install.sh
 ```
 
-把 `codex` 换成你使用的平台即可：
+安装脚本会询问你要安装到哪个 Agent。安装后重新打开一个 Agent 会话。
+
+### 高级用法
+
+也可以直接指定平台：
 
 ```bash
+./scripts/install.sh codex
 ./scripts/install.sh claude
 ./scripts/install.sh cursor --project /path/to/project
 ./scripts/install.sh kiro --project /path/to/project
 ./scripts/install.sh vscode --project /path/to/project
 ./scripts/install.sh opencode
-./scripts/install.sh openclaw
-./scripts/install.sh antigravity
-./scripts/install.sh codebuddy
 ```
 
-如果只是给当前仓库或本地测试项目安装，可以一次装常用目标：
-
-```bash
-./scripts/install.sh all --project .
-```
-
-安装后重新打开一个 Agent 会话。
-
-### 平台支持
-
-| 平台 | 安装命令 | 手动触发 |
-| --- | --- | --- |
-| Claude Code | `./scripts/install.sh claude` | `/hug`, `$need-a-hug` |
-| OpenAI Codex CLI | `./scripts/install.sh codex` | `$need-a-hug`, `/prompts:hug` |
-| Cursor | `./scripts/install.sh cursor --project <dir>` | 正常对话触发 |
-| Kiro | `./scripts/install.sh kiro --project <dir>` | 正常对话触发 |
-| VSCode Copilot | `./scripts/install.sh vscode --project <dir>` | `/need-a-hug` prompt |
-| OpenCode | `./scripts/install.sh opencode` | 正常对话触发 |
-| OpenClaw | `./scripts/install.sh openclaw` | 正常对话触发 |
-| Google Antigravity | `./scripts/install.sh antigravity` | 正常对话触发 |
-| CodeBuddy | `./scripts/install.sh codebuddy` | 正常对话触发 |
+支持的 target：`codex`、`claude`、`cursor`、`kiro`、`vscode`、`opencode`、`openclaw`、`antigravity`、`codebuddy`、`all`。
 
 ### 更新
 
 ```bash
 git pull
-./scripts/install.sh <target>
-```
-
-项目级适配需要再次传入项目路径：
-
-```bash
-./scripts/install.sh cursor --project /path/to/project
+./scripts/install.sh
 ```
 
 ### 手动安装
