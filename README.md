@@ -1,8 +1,14 @@
 # need-a-hug
 
-> Sometimes you just need a hug.
+> Lightweight emotional first aid for AI agents: comfort overwhelmed developers before another plan.
 
-[中文说明](README.zh-CN.md)
+[![Latest release](https://img.shields.io/github/v/release/lonelymoon87/need-a-hug?label=release)](https://github.com/lonelymoon87/need-a-hug/releases/latest)
+[![GitHub stars](https://img.shields.io/github/stars/lonelymoon87/need-a-hug?style=social)](https://github.com/lonelymoon87/need-a-hug/stargazers)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+[中文说明](README.zh-CN.md) · [Download the `.skill`](https://github.com/lonelymoon87/need-a-hug/releases/latest/download/need-a-hug.skill) · [Claude Code plugin](https://github.com/lonelymoon87/need-a-hug/releases/latest/download/need-a-hug-claude-plugin.zip)
+
+**Need a Hug** is an open-source Agent Skill / Claude Code plugin / Codex skill for AI coding assistants that should notice when the person using them is overwhelmed, burned out, ashamed, or just needs a gentler reply before continuing.
 
 This is a slightly unusual skill.
 
