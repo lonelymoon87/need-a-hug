@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.5
+
+- Improved GitHub discoverability with clearer Agent Skill, Claude Code, Codex, Cursor, and GitHub Copilot positioning near the top of the README.
+- Added `docs/LAUNCH_KIT.md` with share copy, community submission notes, and safety positioning for public promotion.
+- Added MIT license metadata to `skills/need-a-hug/SKILL.md` so GitHub skill publishing validation passes cleanly.
+- Updated plugin metadata for the discovery-focused release.
+
 ## 0.3.4
 
 - Made the core `SKILL.md` more English-dominant for international skill marketplaces while keeping Chinese triggers and localized comfort guidance in references.

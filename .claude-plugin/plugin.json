@@ -1,7 +1,7 @@
 {
   "name": "need-a-hug",
-  "version": "0.3.4",
-  "description": "Sometimes you just need a hug. Lightweight emotional first aid for agents when users are overwhelmed, ashamed, burned out, lonely, anxious, or having a hard day.",
+  "version": "0.3.5",
+  "description": "Lightweight emotional first aid for AI agents: comfort overwhelmed users before another plan.",
   "author": {
     "name": "need-a-hug"
   },
