@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.6
+
+- Clarified the public positioning as emotional first aid for coding agents when the human is already overloaded, not a therapy chatbot or productivity coach.
+- Added comparison tables to the English and Chinese READMEs to explain how `need-a-hug` differs from therapy chatbots, productivity coaching, generic empathy prompts, and normal coding agents.
+- Added the "agent made it worse" recovery scenario for cases where broad agent edits, failing tests, or repeated AI mistakes overload the user.
+- Broadened optional Claude Code hook triggers for lowercase English distress phrases and explicit crisis/safety phrases in English and Chinese.
+- Hardened `session-memory.sh` JSON escaping and added `scripts/check.sh` for package, hook, and release artifact validation.
+
 ## 0.3.5
 
 - Improved GitHub discoverability with clearer Agent Skill, Claude Code, Codex, Cursor, and GitHub Copilot positioning near the top of the README.

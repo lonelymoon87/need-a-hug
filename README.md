@@ -1,6 +1,6 @@
 # need-a-hug
 
-> Lightweight emotional first aid for AI agents: comfort overwhelmed developers before another plan.
+> Emotional first aid for coding agents when the human is already overloaded.
 
 [![Latest release](https://img.shields.io/github/v/release/lonelymoon87/need-a-hug?label=release)](https://github.com/lonelymoon87/need-a-hug/releases/latest)
 [![GitHub stars](https://img.shields.io/github/stars/lonelymoon87/need-a-hug?style=social)](https://github.com/lonelymoon87/need-a-hug/stargazers)
@@ -68,6 +68,33 @@ The AI keeps answering like a workflow, and that makes me feel worse.
 ```
 
 `need-a-hug` helps the agent slow down, name the hurt without making it dramatic, reduce shame, and stay close enough that the user can breathe again.
+
+## What It Is Not
+
+`need-a-hug` is intentionally smaller and safer than a therapy chatbot. It is a humane agent UX layer for coding assistants, not a mental-health product.
+
+| Compared with | What they usually do | What `need-a-hug` does instead |
+| --- | --- | --- |
+| Therapy chatbot | Simulate ongoing counseling, mood tracking, screening, or treatment-like conversation | Offer short emotional first aid, then return gently to the user's actual work |
+| Productivity coach | Convert distress into goals, routines, checklists, or habits | Pause the productivity pressure until the user is steadier |
+| Generic system prompt | Add broad empathy instructions that are easy to ignore during tool-heavy work | Gives the agent concrete triggers, first-reply shape, crisis boundaries, and task-return rules |
+| Normal coding agent | Keeps planning, editing, and explaining even when the human is overloaded | Stops pushing, lowers cognitive load, and resumes with one small verifiable step |
+
+## The Agent Made It Worse
+
+A special use case is when the assistant itself caused the overload:
+
+```text
+The agent changed too many files, tests are failing, and now I feel like I am losing control of the project.
+```
+
+In that moment, the right answer is not another large plan. The agent should acknowledge the frustration, stop broad edits, inspect what happened, and recover one small verified fact at a time.
+
+```text
+We both need to slow down for a second.
+
+I will not keep changing files blindly. First I will look at the diff, identify the smallest broken piece, and verify one recovery step before touching anything else.
+```
 
 ## What The Agent Learns To Do
 
