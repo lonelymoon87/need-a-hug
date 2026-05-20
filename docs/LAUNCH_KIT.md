@@ -4,6 +4,8 @@ Updated: 2026-05-20
 
 This file exists so people can share `need-a-hug` without having to reverse-engineer the pitch.
 
+Chinese launch kit: [`docs/CHINESE_PROMOTION_KIT.md`](CHINESE_PROMOTION_KIT.md)
+
 Repository: https://github.com/lonelymoon87/need-a-hug
 Latest release: https://github.com/lonelymoon87/need-a-hug/releases/latest
 Portable skill: https://github.com/lonelymoon87/need-a-hug/releases/latest/download/need-a-hug.skill
