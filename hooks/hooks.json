@@ -3,7 +3,7 @@
   "hooks": {
     "UserPromptSubmit": [
       {
-        "matcher": "need a hug|hug me|comfort me|encourage me|I'm overwhelmed|I'm spiraling|I can't do this|I feel stupid|I feel useless|I'm burned out|I want to cry|抱抱|安慰我|鼓励我|陪我一下|我撑不住了|我崩溃了|我想哭|我好累|我不行了|我太废物了|我是不是太菜了|这个 bug 把我搞崩了|AI 一直错",
+        "matcher": "need a hug|need hug|i need a hug|hug me|comfort me|encourage me|i'm overwhelmed|I'm overwhelmed|i am overwhelmed|I'm spiraling|i'm spiraling|I can't do this|i can't do this|i cannot do this|I feel stupid|i feel stupid|I feel useless|i feel useless|I'm burned out|i'm burned out|i am burned out|I'm exhausted|i'm exhausted|I want to cry|i want to cry|I want to die|i want to die|kill myself|hurt myself|self-harm|suicide|suicidal|抱抱|安慰我|鼓励我|陪我一下|我撑不住了|我崩溃了|我想哭|我好累|我不行了|我太废物了|我是不是太菜了|这个 bug 把我搞崩了|AI 一直错|我不想活了|想死|自杀|自残",
         "hooks": [
           {
             "type": "command",

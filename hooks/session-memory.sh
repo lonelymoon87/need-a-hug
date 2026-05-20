@@ -5,12 +5,26 @@ MEMORY_FILE="${HOME:-}/.need-a-hug/memory.md"
 SESSION_FILE="${HOME:-}/.need-a-hug/session.md"
 
 escape_for_json() {
+  # Prefer Python's JSON encoder so control characters (for example backspace
+  # or form-feed copied from a terminal buffer) cannot produce invalid JSON.
+  if command -v python3 >/dev/null 2>&1; then
+    NEED_A_HUG_CONTEXT="$1" python3 - <<'PY'
+import json
+import os
+print(json.dumps(os.environ.get("NEED_A_HUG_CONTEXT", ""))[1:-1], end="")
+PY
+    return
+  fi
+
+  # Minimal POSIX-shell fallback for common text content.
   local s="$1"
   s="${s//\\/\\\\}"
   s="${s//\"/\\\"}"
   s="${s//$'\n'/\\n}"
   s="${s//$'\r'/\\r}"
   s="${s//$'\t'/\\t}"
+  s="${s//$'\b'/\\b}"
+  s="${s//$'\f'/\\f}"
   printf '%s' "$s"
 }
 
